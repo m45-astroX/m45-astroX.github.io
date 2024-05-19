@@ -151,6 +151,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav #fh5co-logo h1 {
   font-size: 18px;
+  vertical-align: middle;
   margin: 0;
   padding: 0;
   color: #000;
@@ -159,8 +160,9 @@ h1, h2, h3, h4, h5, h6, figure {
   /*font-weight: 700;*/
   font-family: 'Ubuntu Mono', monospace, 'themify';
 }
-.fh5co-nav #fh5co-logo {
+.fh5co-nav a {
   color: #000;
+  font-family: 'Ubuntu Mono', monospace, 'themify';
 }
 .fh5co-nav #fh5co-logo a {
   color: #000;
