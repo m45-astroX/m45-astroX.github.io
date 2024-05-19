@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .btn {
   font-size: 24px;
 }
-#fh5co-hero .btn.btn-primary {
+#fh5co-hero .btn .btn-primary {
   padding: 14px 30px !important;
 }
 #fh5co-hero .flexslider {
@@ -391,7 +391,8 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 30px;
-  font-family: 'themify', 'sans-serif'; 
+  /*font-family: 'themify', 'sans-serif';*/
+  font-family: "Source Sans Pro", Arial, sans-serif; /* 追加 */
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
   color: rgba(255, 255, 255, 0.5);
@@ -403,8 +404,9 @@ h1, h2, h3, h4, h5, h6, figure {
   /*font-size: 12px;*/
   font-size: 16px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  /*text-transform: uppercase;*/
+  /*letter-spacing: 2px;*/
+
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn:hover {
   background: #2D6CDF !important;
