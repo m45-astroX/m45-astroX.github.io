@@ -367,6 +367,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
   display: table-cell;
   vertical-align: middle;
+  
   min-height: 700px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
@@ -392,7 +393,8 @@ h1, h2, h3, h4, h5, h6, figure {
   line-height: 1.5;
   margin-bottom: 30px;
   /*font-family: 'themify', 'sans-serif';*/
-  font-family: "Source Sans Pro", Arial, sans-serif; /* 追加 */
+  font-family: 'Ubuntu Mono', monospace, 'themify', 'Arial';
+  font-family: 'Hiragino Maru Gothic ProN W4';
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
   color: rgba(255, 255, 255, 0.5);
