@@ -367,7 +367,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
   display: table-cell;
   vertical-align: middle;
-  
+  text-align: center;
   min-height: 700px;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
@@ -394,8 +394,8 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
   text-align: center;
   /*font-family: 'themify', 'sans-serif';*/
-  font-family: 'Ubuntu Mono', monospace, 'themify', 'Arial';
-  font-family: 'Hiragino Maru Gothic ProN W4';
+  /*font-family: 'Ubuntu Mono', monospace, 'themify', 'Arial';*/
+  font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
   color: rgba(255, 255, 255, 0.5);
