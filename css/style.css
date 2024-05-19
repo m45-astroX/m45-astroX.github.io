@@ -919,7 +919,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-event {
   position: relative;
-  padding-left: 120px;
+  padding-left: 10px;
   width: 100%;
   float: left;
   margin-bottom: 30px;
@@ -951,7 +951,6 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 50px;
   margin-bottom: 10px;
   line-height: 1.5;
-  text-align: left;
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   vertical-align: middle; /* 追加 */
 }
@@ -966,10 +965,11 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   vertical-align: middle; /* 追加 */
 }
+/*
 .fh5co-event p {
-  /*margin-left: 20pt;*/
-  text-align: left;
+  margin-left: 20pt;;
 }
+*/
 
 
 
