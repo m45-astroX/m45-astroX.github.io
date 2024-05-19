@@ -150,13 +150,17 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: "Source Sans Pro", Arial, sans-serif;
 }
 .fh5co-nav #fh5co-logo h1 {
-  font-size: 24px;
+  font-size: 18px;
   margin: 0;
   padding: 0;
+  color: #000;
   /*text-transform: uppercase;*/
-  font-weight: bold;
-  font-weight: 700;
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  /*font-weight: bold;*/
+  /*font-weight: 700;*/
+  font-family: 'Ubuntu Mono', monospace, 'themify';
+}
+.fh5co-nav #fh5co-logo {
+  color: #000;
 }
 .fh5co-nav #fh5co-logo a {
   color: #000;
@@ -373,7 +377,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 30px;
   line-height: 1.3;
   font-weight: 300;
-  font-family: 'Ubuntu Mono', monospace, 'themify';
+  font-family: 'Ubuntu Mono', monospace, 'themify', 'Arial';
   /*font-family:  'themify', 'sans-serif';*/
 }
 @media screen and (max-width: 768px) {
@@ -385,7 +389,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 30px;
-  font-family: 'themify, sans-serif'; 
+  font-family: 'themify', 'sans-serif'; 
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
   color: rgba(255, 255, 255, 0.5);
