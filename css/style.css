@@ -1,3 +1,6 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -5,11 +8,7 @@
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-* 	Template Style 
-*
-* ======================================================= */
+
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
@@ -18,6 +17,7 @@ body {
   color: #828282;
   background: #fff;
 }
+
 
 #page {
   position: relative;
@@ -45,7 +45,6 @@ body {
   background: rgba(0, 0, 0, 0.7);
   content: "";
 }
-
 a {
   color: #2D6CDF;
   -webkit-transition: 0.5s;
@@ -57,7 +56,6 @@ a:hover, a:active, a:focus {
   outline: none;
   text-decoration: none;
 }
-
 p {
   margin-bottom: 20px;
 }
@@ -146,7 +144,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 24px;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: bold;
   font-weight: 700;
   font-family: "Source Sans Pro", Arial, sans-serif;
@@ -154,7 +152,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav #fh5co-logo a {
   color: #000;
   position: relative;
-  padding-left: 25px;
+  padding-left: 1em;
 }
 .fh5co-nav #fh5co-logo a span {
   color: #000;
@@ -283,6 +281,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 
+
 /***********************/
 /*        hero         */
 /***********************/
@@ -365,7 +364,8 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 30px;
   line-height: 1.3;
   font-weight: 300;
-  font-family: 'themify, sans-serif';
+  font-family: 'Ubuntu Mono', monospace, 'themify';
+  /*font-family:  'themify', 'sans-serif';*/
 }
 @media screen and (max-width: 768px) {
   #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
@@ -404,6 +404,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead .icon-heart {
   color: #d9534f;
 }
+
 
 
 
@@ -690,7 +691,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-heading h2 {
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   line-height: 1.5;
   color: #000;
   text-transform: uppercase;
@@ -711,6 +712,51 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-heading p {
   font-size: 14px;
 }
+
+
+
+
+/* Begin of Research */
+.fh5-research h2 {
+  font-size: 25px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  line-height: 1.5;
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  vertical-align: middle;
+}
+.fh5-research h2 a {
+  color: black;
+}
+.fh5-research h3 {
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  color: #000;
+  /*text-transform: uppercase;*/
+  position: relative;
+}
+.fh5-research h4 {
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  font-size: 20px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  color: #000;
+  /*text-transform: uppercase;*/
+  position: relative;
+}
+.fh5-research p {
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+/* End of Research */
+
+
+
+
 
 #fh5co-testimonial {
   background: #1F5F8B;
@@ -879,8 +925,9 @@ h1, h2, h3, h4, h5, h6, figure {
   line-height: 24px;
 }
 .fh5co-event h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-bottom: 10px;
   line-height: 1.5;
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   vertical-align: middle; /* 追加 */
@@ -888,8 +935,20 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-event h3 a {
   color: black;
 }
+.fh5co-event h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 20pt;
+  line-height: 1.5;
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  vertical-align: middle; /* 追加 */
+}
+.fh5co-event p {
+  margin-left: 20pt;
+}
 
-/* 追加 */
+
+
 .enu-event h3 {
   text-align: left;
   vertical-align: bottom;
@@ -945,6 +1004,14 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-blog .blog-text span.comment a i {
   padding-left: 7px;
+}
+.fh5co-blog h2 {
+  font-size: 30px;
+  margin-bottom: 0px;
+  line-height: 1.5;
+}
+.fh5co-blog h2 a {
+  color: black;
 }
 .fh5co-blog .blog-text h3 {
   font-size: 20px;
