@@ -919,7 +919,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-event {
   position: relative;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
   width: 100%;
   float: left;
   margin-bottom: 30px;
