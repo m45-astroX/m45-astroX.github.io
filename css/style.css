@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.active > a {
   font-weight: 400;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
   .menu-1 { display: none; }
 }
 
