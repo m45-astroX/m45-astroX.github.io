@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-weight: 400;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 200px) {
   .menu-1 { display: none; }
 }
 
