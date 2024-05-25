@@ -222,8 +222,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.active > a {
   font-weight: 400;
 }
-
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 1200px) {
   .menu-1 { display: none; }
 }
 
@@ -880,7 +879,7 @@ h1, h2, h3, h4, h5, h6, figure {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {  /*org_value=768*/
   .pricing__item {
     margin-bottom: 30px;
   }
