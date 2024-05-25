@@ -385,33 +385,13 @@ h1, h2, h3, h4, h5, h6, figure {
   text-align: center;
 }
 #fh5co-hero .flexslider .slider-outer-2 .slider-text-2 h1 {
-  /*display: table;*/
-  /*opacity: 0;*/
-
-/*
-  min-height: 630px;
   height: 630px;
-  width: auto;
-  z-index: 9;
-  text-align: center;
-  vertical-align: middle;
-  padding: 18px 30px !important;
-  display: table-cell;
-  vertical-align: middle;
-  height: 630px;
-  */
-  /*width: auto;*/
-  height: 630px;
-  /*width: 2500px;*/
+  width: 2500px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  /*position: relative;*/
-  /*height: 950px;*/
   color: #fff;
   font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
-  /*display: flex;*/
-  /*align-items: center;*/
 }
 
 
