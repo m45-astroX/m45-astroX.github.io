@@ -253,13 +253,14 @@ h1, h2, h3, h4, h5, h6, figure {
   text-align: center;
 }
 #fh5co-hero .flexslider .slides {
-  position: relative;
+  /*position: relative;*/
   overflow: hidden;
 }
 #fh5co-hero .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  /*background-position: bottom center;*/
+  background-position: center;
   min-height: 630px;
   height: 630px;
   position: relative;
@@ -306,9 +307,12 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text {
   display: table;
   opacity: 0;
-  min-height: 630px;
+  /*min-height: 630px;*/
   height: 630px;
+  width: auto;
   z-index: 9;
+  text-align: center;
+  vertical-align: middle;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
   display: table-cell;
@@ -360,7 +364,6 @@ h1, h2, h3, h4, h5, h6, figure {
   font-weight: 700;
   /*text-transform: uppercase;*/
   /*letter-spacing: 2px;*/
-
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn:hover {
   background: #2D6CDF !important;
@@ -374,6 +377,41 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead .icon-heart {
   color: #d9534f;
+}
+#fh5co-hero .flexslider .slider-outer-2 {
+  height: 100%;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+#fh5co-hero .flexslider .slider-outer-2 .slider-text-2 h1 {
+  /*display: table;*/
+  /*opacity: 0;*/
+
+/*
+  min-height: 630px;
+  height: 630px;
+  width: auto;
+  z-index: 9;
+  text-align: center;
+  vertical-align: middle;
+  padding: 18px 30px !important;
+  display: table-cell;
+  vertical-align: middle;
+  height: 630px;
+  */
+  /*width: auto;*/
+  height: 630px;
+  width: 2000px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  /*position: relative;*/
+  /*height: 950px;*/
+  color: #fff;
+  font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+  /*display: flex;*/
+  /*align-items: center;*/
 }
 
 
