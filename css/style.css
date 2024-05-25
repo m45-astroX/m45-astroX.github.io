@@ -378,17 +378,16 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead .icon-heart {
   color: #d9534f;
 }
+
 #fh5co-hero .flexslider .slider-outer-2 {
-  height: 100%;
   display: table;
-  width: 100%;
   text-align: center;
 }
 #fh5co-hero .flexslider .slider-outer-2 .slider-text-2 h1 {
   height: 630px;
   width: 2500px;
   display: table-cell;
-  text-align: center;
+  /*text-align: center;*/
   vertical-align: middle;
   color: #fff;
   font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
