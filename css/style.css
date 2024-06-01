@@ -12,6 +12,8 @@
 
 
 
+
+
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
@@ -20,7 +22,7 @@ body {
   color: #828282;
   background: #fff;
 }
-#page {
+#page {  
   position: relative;
   overflow-x: hidden;
   width: 100%;
@@ -257,6 +259,7 @@ h1, h2, h3, h4, h5, h6, figure {
   overflow: hidden;
 }
 #fh5co-hero .flexslider .slides li {
+  /* USED */
   background-repeat: no-repeat;
   background-size: cover;
   /*background-position: bottom center;*/
@@ -274,18 +277,6 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   color: #000;
 }
-/*
-#fh5co-hero .flexslider .slides li:after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: '';
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-*/
 #fh5co-hero .flexslider .flex-control-nav {
   bottom: 40px;
   z-index: 1000;
@@ -295,10 +286,8 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: none;
   width: 12px;
   height: 12px;
-  cursor: pointer;
 }
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
-  cursor: pointer;
   background: rgba(255, 255, 255, 0.7);
 }
 #fh5co-hero .flexslider .flex-direction-nav {
@@ -315,12 +304,17 @@ h1, h2, h3, h4, h5, h6, figure {
   vertical-align: middle;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
+  /*
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
+  */
   min-height: 700px;
+  display: table;
+  text-align: center;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
+  display: table;
+  text-align: center;
   margin: 0;
   padding: 0;
   color: white;
@@ -344,16 +338,16 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
-  font-size: 20px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  text-align: center;
-  /*font-family: 'themify', 'sans-serif';*/
-  /*font-family: 'Ubuntu Mono', monospace, 'themify', 'Arial';*/
+  margin-bottom: 20px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 300; /* 'Ubuntu Mono', monospace,*/
   font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+  /*font-family:  'themify', 'sans-serif';*/
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
   color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
   padding: 18px 30px !important;
@@ -379,11 +373,16 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #d9534f;
 }
 
+
+
+
+
 #fh5co-hero .flexslider .slider-outer-2 {
   display: table;
   text-align: center;
+  font-size: 40pt;
 }
-#fh5co-hero .flexslider .slider-outer-2 .slider-text-2 h1 {
+#fh5co-hero .flexslider .slider-outer-2 > .slider-text-2 h1 {
   height: 630px;
   width: 2500px;
   display: table-cell;
@@ -391,6 +390,134 @@ h1, h2, h3, h4, h5, h6, figure {
   vertical-align: middle;
   color: #fff;
   font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero .flexslider .slider-outer-2 > .slider-text-2 h2 {
+  height: 630px;
+  width: 2500px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 26px;
+  color: #fff;
+  font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero .flexslider .slider-outer-2 > .slider-text-2 a {
+  height: 630px;
+  width: 2500px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero .flexslider .slider-outer-2 .slider-text-2 > .btn {
+  padding: 18px 30px !important;
+  color: #fff;
+  border: none !important;
+  /*font-size: 12px;*/
+  font-size: 16px;
+  font-weight: 700;
+  /*text-transform: uppercase;*/
+  /*letter-spacing: 2px;*/
+}
+#fh5co-hero .flexslider .slider-outer-2 > .slider-text-2 p {
+  height: 630px;
+  width: 2500px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-family: 'Hiragino Maru Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero .flexslider .slider-text-2 > .btn:hover {
+  background: #2D6CDF !important;
+  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+}
+
+
+#fh5co-hero-rem .container-hero-research {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+  background-image: url(../images/tsukuba_gaus.png);
+  background-position: 45% 70%;
+  background-repeat: no-repeat;
+}
+#fh5co-hero-rem .container-hero-research h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  color:#fff;
+  margin:0;
+  z-index: 10000;
+}
+#fh5co-hero-rem .container-hero-profile {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+  background-image: url(../images/shirosaki_gaus.png);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#fh5co-hero-rem .container-hero-profile h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  color:#ffffff;
+  margin:0;
+  z-index: 10000;
+  font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero-rem .container-hero-photo {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+  background-image: url(../images/ohdai.jpg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#fh5co-hero-rem .container-hero-photo h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  color:#ffffff;
+  margin:0;
+  z-index: 10000;
+  font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
+}
+#fh5co-hero-rem .container-hero-contact {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+  background-image: url(../images/bg2-gaus.png);
+  background-position: 00% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#fh5co-hero-rem .container-hero-contact h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  color:#3d3d3d;
+  margin:0;
+  z-index: 10000;
+  font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
 }
 
 
@@ -400,7 +527,6 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-bg-section {
   background: #e8e8e8;
 }
-
 #fh5co-course-categories,
 #fh5co-counter,
 #fh5co-course,
@@ -633,7 +759,10 @@ h1, h2, h3, h4, h5, h6, figure {
 /***********************/
 /*       Contact       */
 /***********************/
-
+.fh5co-contact {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .fh5co-contact h2 {
   margin-bottom: 60px;
   font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
@@ -729,14 +858,16 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 60px;
   margin-bottom: 50px;
   line-height: 1.5;
-  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  font-family: 'Hiragino Sans W3', "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   vertical-align: middle;
 }
 .fh5-research h2 a {
   color: black;
 }
 .fh5-research h3 {
-  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Hiragino Sans W3', "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   font-size: 24px;
   margin-top: 40px;
   margin-bottom: 5px;
@@ -746,7 +877,9 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .fh5-research h4 {
-  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Hiragino Sans W3', "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   font-size: 20px;
   margin-bottom: 5px;
   line-height: 1.5;
@@ -755,7 +888,9 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .fh5-research p {
-  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Hiragino Sans W3', "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
   font-size: 18px;
   margin-bottom: 5px;
 }
@@ -910,6 +1045,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-event {
   position: relative;
   padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
   float: left;
   margin-bottom: 30px;
@@ -941,8 +1077,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 50px;
   margin-bottom: 10px;
   line-height: 1.5;
-  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
-  vertical-align: middle; /* 追加 */
+  font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */ 
 }
 .fh5co-event h3 a {
   color: black;
@@ -953,24 +1088,18 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-left: 20pt;
   line-height: 1.5;
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
-  vertical-align: middle; /* 追加 */
 }
-
-
-
-
-
-.enu-event h3 {
-  text-align: left;
-  vertical-align: bottom;
-}
-.enu-event-1 h3 {
-  font-size: 18px;
-  margin-bottom: 20px;
+.fh5co-event p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 20pt;
   line-height: 1.5;
+  color: #767676;
   font-family: "Source Sans Pro", Arial, sans-serif; /* font-family追加 */
-  text-align: center;
 }
+
+
+
 
 
 .fh5co-blog {
@@ -1311,6 +1440,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-offcanvas {
+  font-size: 24px;
   position: absolute;
   z-index: 1901;
   width: 270px;
@@ -1331,7 +1461,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
   #fh5co-offcanvas {
     display: block;
   }
@@ -1440,6 +1570,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-nav-toggle {
+  position: absolute;
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -1529,7 +1660,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav-toggle {
   position: absolute;
   right: 0px;
-  top: 55px;
+  top: 20px;
   z-index: 21;
   padding: 6px 0 0 0;
   display: block;
@@ -1540,7 +1671,7 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 2001;
   border-bottom: none !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
   .fh5co-nav-toggle {
     display: block;
   }
@@ -1560,7 +1691,6 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-transition: 0.5s;
   transition: 0.5s;
   padding: 8px 20px;
-
 }
 .btn.btn-md {
   padding: 8px 20px !important;
