@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="ja">
 
-	<!-- *** HEAD ***-->
+
+
+	<!-- *** HEAD *** -->
 	<head>
 	
 		<meta charset="utf-8">
@@ -16,6 +18,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+		<link href="themify-icons.css" rel="stylesheet">
 
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="css/animate.css">
@@ -55,27 +58,23 @@
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
 			<div class="container">
-				
 				<div class="row">
 
 					<div class="col-xs-6">
 						<h1><a href="index.html">Yuma Aoki's Portfolio</a></h1>
 					</div>
 					
-					<div class="col-xs-6 text-right">
-						<div class="menu-1">
-						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="research.html">研究成果</a></li>
-							<li class="active"><a href="profile.html">自己紹介</a></li>
-							<li class="active"><a href="astrophotography.html">天体写真</a></li>
-							<li class="active"><a href="contact.html">Contact</a></li>
-						</ul>
-						</div>
+					<div class="col-xs-6 menu-1 text-right">
+					<ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="research.html">研究成果</a></li>
+						<li class="active"><a href="profile.html">自己紹介</a></li>
+						<li class="active"><a href="astrophotography.html">天体写真</a></li>
+						<li class="active"><a href="contact.html">Contact</a></li>
+					</ul>
 					</div>
 
 				</div>
-				
 			</div>
 		</div>
 	</nav>
@@ -87,44 +86,37 @@
 		<div class="flexslider">
 			<ul class="slides">
 
-		   	<li style="background-image: url(images/iridium.jpg);">
+		   	<li style="background-image: url(images/top_b.jpg);">
 		   		<div class="container">
-				<div class="slider-outer-2">
+
 				<div class="slider-text-2">
 					<h1>Yuma Aoki's portfolio</h1>
 				</div>
-				</div>
+
 		   		</div>
 		   	</li>
 			
 		   	<li style="background-image: url(images/pixel2022_gaus.jpeg);">
 				<div class="container">
-				<div class="slider-outer-2">
 				<div class="slider-text-2">
-					<h2>
-					<a href="research.html">
-					天の川銀河の観測研究・観測装置の開発をしています
-					</a>
-					</h2>
-				</div>
+					<h2>天の川銀河の観測研究・観測装置の開発をしています</h2>
+					<p><a class="btn btn-primary" href="research.html">
+					研究成果はこちら
+					</a></p>
 				</div>
 				</div>
 		   	</li>
 
-		   	<li style="background-image: url(images/M45_gaus.jpg);">
+		   	<li style="background-image: url(images/top_c.jpg);">
 				<div class="container">
-				<div class="slider-outer-2">
 				<div class="slider-text-2">
-					<h2>
-					<a href="astrophotography.html">
-					関西で天体写真を撮影しています
-					</a>
-					</h2>
-				</div>
+					<h2>関西で天体写真を撮影しています</h2>
+					<p><a class="btn btn-primary" href="astrophotography.html">
+					ちょっと見てみる
+					</a></p>
 				</div>
 				</div>
 		   	</li>
-			
 			
 		  	</ul>
 	  	</div>
@@ -133,48 +125,30 @@
 
 
 	<!-- *** 研究内容 *** -->
-	<div id="fh5co-course-categories">
+	<div id="fh5co-research-overview">
 		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+
+			<div class="row">
+				<div class="content-title text-center animate-box">
 					<h2>研究内容</h2>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="col-md-4 col-sm-6 text-center animate-box">
-					<div class="services">
-						
-						<img src="./images/satellite-4-svgrepo-com.svg" width="100" height="150" alt="">
-
-						<div class="desc">
-							<h3>X線天文衛星の開発</h3>
-							<p>2023年に打ち上げられた<a href="https://www.xrism.jaxa.jp/" target="_blank">X線天文衛星XRISM</a>の開発に参加しています。</p>
-						</div>
-
-					</div>
+				<div class="content-detail col-md-4 col-sm-6 text-center animate-box">
+					<img src="./images/icon/satellite.svg" width="100" height="150" alt="">
+					<h3>X線天文衛星の開発</h3>
+					<p>2023年に打ち上げられた<a href="https://www.xrism.jaxa.jp/" target="_blank">X線天文衛星XRISM</a>の開発に参加しています。</p>
 				</div>
-				<div class="col-md-4 col-sm-6 text-center animate-box">
-					<div class="services">
-						
-						<img src="./images/galaxy.svg" width="100" height="150" alt="">
-
-						<div class="desc">
-							<h3>天の川銀河の観測研究</h3>
-							<p>X線天文衛星を用いて天の川銀河の観測研究をしています。</p>
-						</div>
-					</div>
+				<div class="content-detail col-md-4 col-sm-6 text-center animate-box">
+					<img src="./images/icon/galaxy.svg" width="100" height="150" alt="">
+					<h3>天の川銀河の観測研究</h3>
+					<p>X線天文衛星を用いて天の川銀河の観測研究をしています。</p>
 				</div>
-				<div class="col-md-4 col-sm-6 text-center animate-box">
-					<div class="services">
-
-						<img src="./images/build-svgrepo-com.svg" width="100" height="150" alt="">
-
-						<div class="desc">
-							<h3>国際宇宙ステーション搭載検出器の開発</h3>
-							<p><a href="https://www.nasa.gov/international-space-station/" target="_blank">国際宇宙ステーション</a>の宇宙空間曝露部に搭載するX線検出器の開発に参加しています。</p>
-							
-						</div>
-					</div>
+				<div class="content-detail col-md-4 col-sm-6 text-center animate-box">
+					<img src="./images/icon/build.svg" width="100" height="150" alt="">
+					<h3>国際宇宙ステーション搭載検出器の開発</h3>
+					<p><a href="https://www.nasa.gov/international-space-station/" target="_blank">国際宇宙ステーション</a>の宇宙空間曝露部に搭載するX線検出器の開発に参加しています。</p>
 				</div>
 			</div>
 		</div>
@@ -186,14 +160,14 @@
 	<div id="fh5co-blog">
 		<div class="container">
 
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2><span>ニュース</span></h2>
+			<div class="row">
+				<div class="content-title col-md-6 col-md-offset-3 text-center animate-box">
+					<h2>ニュース</h2>
 				</div>
 			</div>
 			
-			<div class="row animate-box">
-				<div class="fh5co-event">
+			<div class="row">
+				<div class="content-detail animate-box">
 					
 					<h3>2024.04.18</h3>
 					<p>文芸学部のデザイン研究所を訪問しました。</p>
@@ -201,6 +175,9 @@
 					<h3>2024.04.05</h3>
 					<p>関西極限宇宙研究会で口頭発表しました。研究会のURLは<a href="https://sites.google.com/view/koko24/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank">こちら</a>。</p>
 					
+					<h3>2024.03.19</h3>
+					<p>大学院を修了しました。大学院部長賞を総代で授賞しました。</p>
+
 					<h3>2024.01.05</h3>
 					<p>青木が開発に携わってきたX線天文衛星XRISMのファーストライト画像が公開されました。プレスリリースは<a href="https://www.jaxa.jp/press/2024/01/20240105-1_j.html" target="_blank">こちら</a>。</p>
 
@@ -227,8 +204,8 @@
 	</footer>
 
 
+	
 	</div>
-
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
