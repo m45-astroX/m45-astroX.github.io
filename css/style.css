@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 630px;
   height: 630px;
   z-index: 1;
-  background-image: url(../images/tsukuba_gaus.png);
+  background-image: url(../images/bg/tsukuba_gaus.png);
   background-position: 45% 70%;
   background-repeat: no-repeat;
 }
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 630px;
   height: 630px;
   z-index: 1;
-  background-image: url(../images/shiryokan-gaus.jpg);
+  background-image: url(../images/bg/shiryokan_gaus.jpg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 630px;
   height: 630px;
   z-index: 1;
-  background-image: url(../images/ohdai.jpg);
+  background-image: url(../images/bg/ohdai.jpg);
   background-position: 0% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -286,7 +286,7 @@ h1, h2, h3, h4, h5, h6, figure {
   min-height: 630px;
   height: 630px;
   z-index: 1;
-  background-image: url(../images/sakura_gaus.jpeg);
+  background-image: url(../images/bg/sakura_gaus.jpg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
