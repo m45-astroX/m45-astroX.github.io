@@ -236,6 +236,8 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#fff;
   margin:0;
   z-index: 10000;
+  font-family: 'Hiragino Kaku Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+
 }
 #fh5co-hero-rem .container-hero-profile {
   position: relative;
@@ -256,7 +258,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#ffffff;
   margin:0;
   z-index: 10000;
-  font-family: 'Hiragino Kaku Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5co-hero-rem .container-hero-photo {
   position: relative;
@@ -277,7 +279,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#ffffff;
   margin:0;
   z-index: 10000;
-  font-family: 'Hiragino Kaku Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5co-hero-rem .container-hero-contact {
   position: relative;
@@ -446,6 +448,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 150px;
   margin-bottom: 30px;
   padding: 20px 20px;
+  font-weight: lighter;
 }
 #fh5-research h2 {
   margin-bottom: 10px;
@@ -534,10 +537,16 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5-astrophoto .img-responsive {
   pointer-events: none;
 }
-#fh5-astrophoto h2 {
+#fh5-astrophoto h1 {
   margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 32px;
   font-family: 'Ubuntu Mono', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+}
+#fh5-astrophoto h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-family: 'Ubuntu Mono', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  text-align: center;
 }
 #fh5-astrophoto h3 {
   margin-top: 26px;
@@ -561,6 +570,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.2;
 }
+
 
 
 
