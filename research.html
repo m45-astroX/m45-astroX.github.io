@@ -11,7 +11,7 @@
 		<title>Y.Aoki's Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="近畿大学で天の川銀河の観測研究をしています"/>
-		<meta name="keywords" content="近畿大学, 近大, 宇宙, 物理学コース, 青木悠馬, X線, 天文, Yuma Aoki, X-ray astronomy, astrophysics, astronomy"/>
+		<meta name="keywords" content="近畿大学, 近大, 宇宙, 物理学コース, 青木, X線, 天文, Yuma Aoki, X-ray astronomy, astrophysics, astronomy"/>
 		<meta name="author" content="Yuma Aoki"/>
 		
 		<!-- Fonts -->
@@ -19,6 +19,18 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 		<link href="themify-icons.css" rel="stylesheet">
+
+		<script>
+			(function(d) {
+			var config = {
+			kitId: 'czu6afb',
+			scriptTimeout: 3000,
+			async: true
+			},
+			h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})
+			(document);
+		</script>
 
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="css/animate.css">
@@ -58,7 +70,6 @@
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
 			<div class="container">
-				
 				<div class="row">
 
 					<div class="col-xs-6">
@@ -66,17 +77,18 @@
 					</div>
 					
 					<div class="col-xs-6 text-right menu-1">
-						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="research.html">研究成果</a></li>
-							<li class="active"><a href="profile.html">自己紹介</a></li>
-							<li class="active"><a href="astrophotography.html">天体写真</a></li>
-							<li class="active"><a href="contact.html">Contact</a></li>
-						</ul>
+					<ul>
+						<span class="buruburu">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="research.html">研究成果</a></li>
+						<li class="active"><a href="profile.html">自己紹介</a></li>
+						<li class="active"><a href="astrophotography.html">天体写真</a></li>
+						<li class="active"><a href="contact.html">Contact</a></li>
+						</span>
+					</ul>
 					</div>
 
 				</div>
-				
 			</div>
 		</div>
 	</nav>

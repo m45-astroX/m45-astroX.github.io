@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#fff;
   margin:0;
   z-index: 10000;
-  font-family: 'Hiragino Kaku Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 
 }
 #fh5co-hero-rem .container-hero-profile {
@@ -286,7 +286,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#ffffff;
   margin:0;
   z-index: 10000;
-  font-family: 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5co-hero-rem .container-hero-photo {
   position: relative;
@@ -307,7 +307,18 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#ffffff;
   margin:0;
   z-index: 10000;
-  font-family: 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+}
+#fh5co-hero-rem .container-hero-photo h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,150%);
+  font-size: 20px;
+  color:#ffffff;
+  margin:0;
+  z-index: 10000;
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5co-hero-rem .container-hero-contact {
   position: relative;
@@ -328,7 +339,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color:#000000;
   margin:0;
   z-index: 10000;
-  font-family: 'Ubuntu Mono', 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Ubuntu Mono', 'Roboto', sans-serif;
 }
 
 
@@ -344,17 +355,17 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-top: 150px;
 }
 #fh5co-research-overview .content-title h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
 #fh5co-research-overview .content-detail h3 {
-  font-size: 22px;
+  font-size: 20px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
 #fh5co-research-overview .content-detail p {
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
@@ -410,12 +421,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-contact h2 {
   margin-bottom: 60px;
-  font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
   font-size: 25px;
   color: black;
 }
 .fh5co-contact h3 {
-  font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';
   font-size: 20px;
   color: black;
 }
@@ -476,35 +487,35 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5-research {
   width: 100%;
-  margin-top: 150px;
+  margin-top: 80px;
   margin-bottom: 30px;
   padding: 20px 20px;
   font-weight: lighter;
 }
 #fh5-research h2 {
-  margin-bottom: 10px;
-  font-size: 26px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  /*margin-bottom: 10px;*/
+  font-size: 24px;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5-research h3 {
   margin-top: 60px;
   margin-bottom: 10px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
-  font-size: 24px;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-size: 20px;
   color: #000;
 }
 #fh5-research h4 {
   padding-left: 20px;
   margin-bottom: 5px;
   font-size: 20px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   color: #000;
 }
 #fh5-research p {
   padding-left: 20px;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.2;
 }
 
@@ -517,37 +528,94 @@ h1, h2, h3, h4, h5, h6, figure {
 /********************/
 
 #fh5-profile {
+  position: relative;
   width: 100%;
-  margin-top: 150px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  /*margin-bottom: 20px;*/
   padding: 20px 20px;
+  display: inline-block;
 }
-#fh5-profile h2 {
+
+#fh5-profile .background h2 {
   margin-bottom: 10px;
-  font-size: 26px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-size: 24px;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
 }
-#fh5-profile h3 {
+#fh5-profile .background h3 {
   margin-top: 26px;
   margin-bottom: 10px;
   padding-left: 20px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-size: 20px;
   color: #000;
 }
-#fh5-profile h4 {
+#fh5-profile .background h4 {
   padding-left: 40px;
   margin-bottom: 5px;
-  font-size: 20px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-size: 18px;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   color: #000;
 }
-#fh5-profile p {
+#fh5-profile .background p {
   padding-left: 40px;
   margin-bottom: 10px;
-  font-size: 18px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-size: 16px;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.2;
+}
+#fh5-profile .profile .overview {
+  position: relative;
+  /*padding-top: 30px;*/
+  width: 50%;
+  height: 100%;
+  vertical-align: bottom;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+}
+#fh5-profile .profile .overview h2 {
+  width: 100%;
+  text-align: center;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  padding-top: 20px;
+  font-size: 24px;
+}
+#fh5-profile .profile .overview h3 {
+  width: 100%;
+  text-align: center;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  padding-top: 20px;
+  font-size: 20px;
+}
+#fh5-profile .profile .detail {
+  position: relative;
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+}
+#fh5-profile .profile .detail h2 {
+  width: 100%;
+  text-align: center;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+#fh5-profile .profile .detail h3 {
+  width: 100%;
+  /*text-align: center;*/
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  padding-top: 0px;
+  font-size: 20px;
+  padding-bottom: 0px;
 }
 
 
@@ -564,6 +632,11 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
   padding-top: 500px;
   padding: 20px 20px;
+  
+}
+#fh5-astrophoto .astroimg {
+  display: inline-block;
+  text-align: center;
 }
 #fh5-astrophoto .img-responsive {
   pointer-events: none;
@@ -573,20 +646,20 @@ h1, h2, h3, h4, h5, h6, figure {
   text-align: center;
   margin-bottom: 20px;
   font-size: 30px;
-  font-family: 'Ubuntu Mono', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
 }
 #fh5-astrophoto h2 {
   /* SUB TITLE */
   margin-bottom: 30px;
   font-size: 28px;
-  font-family: 'Ubuntu Mono', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   text-align: center;
 }
 #fh5-astrophoto h3 {
   margin-top: 26px;
   margin-bottom: 10px;
   padding-left: 20px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-size: 20px;
   color: #000;
 }
@@ -594,7 +667,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-left: 40px;
   margin-bottom: 5px;
   font-size: 20px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   color: #000;
 }
 #fh5-astrophoto p {
@@ -602,7 +675,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-left: 40px;
   margin-bottom: 10px;
   font-size: 16px;
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.1;
 }
 
@@ -709,22 +782,25 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 20px 20px;
 }
 #fh5co-blog .content-title h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
+
 #fh5co-blog .content-detail h3 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 45px;
   margin-bottom: 10px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
 #fh5co-blog .content-detail a {
+  font-size: 18px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
 #fh5co-blog .content-detail p {
+  font-size: 16px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;  
   /*font-family: 'Hiragino Kaku Gothic ProN W4', 'themify', 'Arial';*/
 }
@@ -1146,6 +1222,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 25px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 10px;
 }
 .fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {
   background: #444;
@@ -1160,7 +1237,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 25px;
   height: 2px;
   color: #252525;
-  font: bold 14px/.4 Helvetica;
+  font: bold 12px Helvetica; /*14px/.4*/
   text-transform: uppercase;
   text-indent: -55px;
   background: #252525;

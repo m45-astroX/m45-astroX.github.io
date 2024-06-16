@@ -4,18 +4,32 @@
 
 	<!-- *** HEAD *** -->
 	<head>
-		
+	
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Y.Aoki's Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="近畿大学で天の川銀河の観測研究をしています"/>
-		<meta name="keywords" content="近畿大学, 近大, 宇宙, 物理学コース, 青木悠馬, X線, 天文, Yuma Aoki, X-ray astronomy, astrophysics, astronomy"/>
+		<meta name="keywords" content="近畿大学, 近大, 宇宙, 物理学コース, 青木, X線, 天文, Yuma Aoki, X-ray astronomy, astrophysics, astronomy"/>
 		<meta name="author" content="Yuma Aoki"/>
 		
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+		<link href="themify-icons.css" rel="stylesheet">
+
+		<script>
+			(function(d) {
+			var config = {
+			kitId: 'czu6afb',
+			scriptTimeout: 3000,
+			async: true
+			},
+			h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})
+			(document);
+		</script>
 
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="css/animate.css">
@@ -55,7 +69,6 @@
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
 			<div class="container">
-				
 				<div class="row">
 
 					<div class="col-xs-6">
@@ -63,17 +76,18 @@
 					</div>
 					
 					<div class="col-xs-6 text-right menu-1">
-						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="research.html">研究成果</a></li>
-							<li class="active"><a href="profile.html">自己紹介</a></li>
-							<li class="active"><a href="astrophotography.html">天体写真</a></li>
-							<li class="active"><a href="contact.html">Contact</a></li>
-						</ul>
+					<ul>
+						<span class="buruburu">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="research.html">研究成果</a></li>
+						<li class="active"><a href="profile.html">自己紹介</a></li>
+						<li class="active"><a href="astrophotography.html">天体写真</a></li>
+						<li class="active"><a href="contact.html">Contact</a></li>
+						</span>
+					</ul>
 					</div>
 
 				</div>
-				
 			</div>
 		</div>
 	</nav>
@@ -89,17 +103,78 @@
 
 
 
+	<!-- *** profileTop *** -->
+	<div id="fh5-profile">
+		<div class="container">
+			<div class="row">
+				
+					<div class="profile col-xs-6 text-center animate-box">
+						<img src="./images/icon/mypic.jpg" width="70%" alt="">
+					</div>
+					<div class="profile">
+					<div class="overview col-xs-6 animate-box">
+						<h2>青木悠馬（Yuma Aoki）</h2>
+						<h3>所属 : 近畿大学大学院 総合理工学研究科 理学専攻</h3>
+						<h3>出身地 : 大阪府堺市</h3>
+						<h3>趣味 : 天体観測, 写真撮影, 他</h3>
+					</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- *** 趣味/推し天体 *** -->
+	<div id="fh5-profile">
+		<div class="container">
+			<div class="row">
+					<div class="profile col-xs-6 animate-box">
+						<div class="detail text-center">
+							<h2>推し天体</h2>
+						</div>
+						<div class="detail">
+							<ul>
+							<li><h3>アンドロメダ座ガンマ星</h3></li>
+							<li><h3>かみのけ座24番星</h3></li>
+							<li><h3>プレアデス星団（すばる）</h3></li>
+							<li><h3>Melotte20</h3></li>
+							<h3>他多数</h3>
+							</ul>
+						</div>
+						
+					</div>
+
+					<div class="profile col-xs-6 animate-box">
+						<div class="detail text-center">
+							<h2>資格</h2>
+						</div>
+						<div class="detail">
+						<ul>
+						<li><h3>基本情報技術者</h3></li>
+						<li><h3>第3級アマチュア無線技士</h3></li>
+						<li><h3>星空宇宙天文検定 1級</h3></li>
+						<li><h3>天文宇宙検定 準1級</h3></li>
+						<h3>他</h3>
+						</ul>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+
 	<!-- *** 学歴 *** -->
 	<div id="fh5-profile">
 		<div class="container">
 
 			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="background col-md-6 col-md-offset-3 text-center">
 					<h2>学歴</h2>
 				</div>
 			</div>
 			
-			<div class="row animate-box">
+			<div class="background row animate-box">
 				
 				<h3>2024.04</h3>
 				<h4>近畿大学大学院 総合理工学研究科 理学専攻 博士後期課程 入学（在学中, D1）</h4>
@@ -123,13 +198,13 @@
 	<div id="fh5-profile">
 		<div class="container">
 
-			<div class="row animate-box">
+			<div class="background row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center">
-					<h2>受賞歴</h2>
+					<h2>受賞</h2>
 				</div>
 			</div>
 			
-			<div class="row animate-box">
+			<div class="background row animate-box">
 				
 				<h3>2024.03</h3>
 				<h4>近畿大学大学院部長賞 総代（近畿大学大学院総合理工学研究科）</h4>
@@ -155,17 +230,43 @@
 
 
 
-	<!-- *** 所属研究室 *** -->
+	<!-- *** 資格 *** -->
+	<!--
 	<div id="fh5-profile">
 		<div class="container">
 
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center">
-					<h2>所属研究室</h2>
+					<h2>資格</h2>
 				</div>
 			</div>
 			
 			<div class="row animate-box text-center">
+				
+				<h3>基本情報技術者</h3>
+				<h3>第3級アマチュア無線技士</h3>
+				<h3>普通自動車免許</h3>
+				<h3>星空宇宙天文検定 1級</h3>
+				<h3>天文宇宙検定 準1級</h3>
+				
+			</div>
+			
+		</div>
+	</div>
+	-->
+
+
+	<!-- *** 所属研究室 *** -->
+	<div id="fh5-profile">
+		<div class="container">
+
+			<div class="row animate-box">
+				<div class="background col-md-6 col-md-offset-3 text-center">
+					<h2>所属研究室</h2>
+				</div>
+			</div>
+			
+			<div class="background row animate-box text-center">
 				
 				<h3>高エネルギー天体物理学研究室（<a href="https://www.phys.kindai.ac.jp/laboratory/nobukawa/" target="_blank">信川研</a>）</h3>
 				<h3>素粒子実験研究室（<a href="https://www.phys.kindai.ac.jp/laboratory/kato/" target="_blank">加藤研</a>）</h3>
@@ -182,12 +283,12 @@
 		<div class="container">
 
 			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="background  col-md-6 col-md-offset-3 text-center">
 					<h2>所属学会/研究会</h2>
 				</div>
 			</div>
 			
-			<div class="row animate-box text-center">
+			<div class="background row animate-box text-center">
 				
 				<h3>日本天文学会</h3>
 				<h3>高エネルギー宇宙物理連絡会</h3>
