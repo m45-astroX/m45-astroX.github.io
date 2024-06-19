@@ -18,73 +18,6 @@
 /*    Loading    */
 /*****************/
 
-/*
-#loading {
-  z-index: 10000;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ccc;
-  border-top-color: #333;
-  border-radius: 50%;
-  animation: spin 1.5s ease-in-out;
-}
-@keyframes spin {
-  0% {transform: rotate(0deg);}
-  50% {transform: rotate(360deg);}
-  100% {transform: rotate(0deg);}
-}
-*/
-
-
-#hideMe {
-  -moz-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Opera */
-  animation: cssAnimation 0s ease-in 5s forwards;
-  /*
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  */
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  z-index:  1000000;
-}
-@keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      overflow:hidden;
-  }
-}
-@-webkit-keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      visibility:hidden;
-  }
-}
-
-
-
-
-/**/
 #waiting {
   position: fixed;
   display: flex;
@@ -93,8 +26,7 @@
   width: 100%;
   height: 100%;
   z-index: 100000;
-  padding: 20px 20px;
-
+  
   fill: none;
   stroke: #000;
   stroke-width: 1;
@@ -102,42 +34,31 @@
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   
-  -moz-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 5s forwards;
-
+  -moz-animation: line-animation 4s ease-in-out forwards;
+  -webkit-animation: line-animation 4s ease-in-out forwards;
+  -o-animation: line-animation 4s ease-in-out forwards;
   animation: line-animation 4s ease-in-out forwards;
-  /*animation-fill-mode: forwards;*/
 }
-/*
-#waiting .logo {
-  
-}
-#waiting .logo-animated {
-  
-}
-*/
 @keyframes line-animation {
-  0%   {
+  0% {
+    padding: 0% 0%;
     opacity: 100%;
     background: #ffffff;
     stroke-dashoffset: 1000;
   }
-  /*
-  25%  { stroke-dashoffset: 1000; }
-  */
-  50%  { stroke-dashoffset: 2000; }
-  /*
-  75%  { stroke-dashoffset: 2000; }
-  */
+  5% {
+    padding: 20px 20px;
+  }
+  50% { 
+    stroke-dashoffset: 2000;
+  }
   80% {
+    padding: 20px 20px;
     stroke-dashoffset: 2000;
     background: #ffffff;
   }
   99% {
-    
+    padding: 0px 0px;
     opacity: 100%;
   }
   100% {
@@ -146,7 +67,11 @@
   }
 
 }
-
+/*
+@media screen and (max-width: 800px) {
+  #waiting { margin: 100px 100px; }
+}
+*/
 
 
 
