@@ -34,10 +34,41 @@
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   
-  -moz-animation: line-animation 4s ease-in-out forwards;
-  -webkit-animation: line-animation 4s ease-in-out forwards;
-  -o-animation: line-animation 4s ease-in-out forwards;
-  animation: line-animation 4s ease-in-out forwards;
+  -moz-animation: line-animation 1.5s ease-in-out forwards;
+  -webkit-animation: line-animation 1.5s ease-in-out forwards;
+  -o-animation: line-animation 1.5s ease-in-out forwards;
+  animation: line-animation 1.5s ease-in-out forwards;
+
+}
+#waiting h1 {
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-size: 20px;
+  -moz-animation: line-animation-f 2s ease-in-out forwards;
+  -webkit-animation: line-animation-f 2s ease-in-out forwards;
+  -o-animation: line-animation-f 2s ease-in-out forwards;
+  animation: line-animation-f 2s ease-in-out forwards;
+}
+
+@keyframes line-animation-f {
+  0% {
+    color: #000;
+    opacity: 100%;
+  }
+  60% {
+    opacity: 100%;
+  }
+  70% {
+    opacity: 10%;
+  }
+  80% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 0%;
+    color: none;
+    stroke-dashoffset: 1000;
+    visibility:hidden;
+  }
 }
 @keyframes line-animation {
   0% {
@@ -65,21 +96,14 @@
     stroke-dashoffset: 1000;
     visibility:hidden;
   }
-
 }
-/*
-@media screen and (max-width: 800px) {
-  #waiting { margin: 100px 100px; }
-}
-*/
-
 
 
 
 
 
 /**************/
-/*  BuruBuru  /*
+/*  BuruBuru  */
 /**************/
 
 .buruburu a:hover {
@@ -87,7 +111,6 @@
   display: block;
   animation: hurueru 0.25s ;/*infinite*/
 }
-
 @keyframes hurueru {
   0% {transform: translate(0px, 0px) rotateZ(0deg)}
   25% {transform: translate(0px, 0px) rotateZ(10deg)}
@@ -599,6 +622,9 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-top: 80px;
   display: inline-block;
 }
+#fh5-profile .profile {
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+}
 
 #fh5-profile .background h2 {
   margin-bottom: 10px;
@@ -610,7 +636,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 10px;
   padding-left: 20px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   vertical-align: middle;
 }
@@ -628,31 +654,32 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.2;
 }
-#fh5-profile .profile > .overview {
+#fh5-profile .profile .overview {
   position: relative;
-  width: 50%;
+  padding: 30px 10px;
+  width: 100%;
   height: 100%;
-  vertical-align: bottom;
+  /*vertical-align: bottom;*/
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
 }
-#fh5-profile .profile > .overview h2 {
+#fh5-profile .profile .overview h2 {
+  width: 100%;
+  /*text-align: center;*/
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  padding-top: 50px;
+  /*margin-top: 20px;*/
+  font-size: 22px;
+}
+#fh5-profile .profile .overview h3 {
   width: 100%;
   /*text-align: center;*/
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-weight: 100;
   display: inline-block;
   /*padding-top: 20px;*/
-  margin-top: 20px;
-  font-size: 24px;
-}
-#fh5-profile .profile > .overview h3 {
-  width: 100%;
-  /*text-align: center;*/
-  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
-  font-weight: 100;
-  display: inline-block;
-  padding-top: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 #fh5-profile .profile .detail {
   position: relative;
@@ -739,6 +766,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 16px;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.1;
+  font-weight: lighter;
 }
 
 
