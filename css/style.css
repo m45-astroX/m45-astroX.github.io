@@ -14,6 +14,145 @@
 
 
 
+/*****************/
+/*    Loading    */
+/*****************/
+
+/*
+#loading {
+  z-index: 10000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1.5s ease-in-out;
+}
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+*/
+
+
+#hideMe {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  /*
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index:  1000000;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+
+
+
+
+/**/
+#waiting {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  padding: 20px 20px;
+
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+
+  animation: line-animation 4s ease-in-out forwards;
+  /*animation-fill-mode: forwards;*/
+}
+/*
+#waiting .logo {
+  
+}
+#waiting .logo-animated {
+  
+}
+*/
+@keyframes line-animation {
+  0%   {
+    opacity: 100%;
+    background: #ffffff;
+    stroke-dashoffset: 1000;
+  }
+  /*
+  25%  { stroke-dashoffset: 1000; }
+  */
+  50%  { stroke-dashoffset: 2000; }
+  /*
+  75%  { stroke-dashoffset: 2000; }
+  */
+  80% {
+    stroke-dashoffset: 2000;
+    background: #ffffff;
+  }
+  99% {
+    
+    opacity: 100%;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+    visibility:hidden;
+  }
+
+}
+
+
+
+
+
+
+
 /**************/
 /*  BuruBuru  /*
 /**************/
@@ -30,7 +169,6 @@
   /*50% {transform: translate(0px, 0px) rotateZ(10deg)}*/
   75% {transform: translate(0px, 0px) rotateZ(-10deg)}
   100% {transform: translate(0px, 0px) rotateZ(0deg)}
-  
 }
 
 
@@ -38,7 +176,7 @@
 
 
 body {
-  font-family: 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", sans-serif;
+  font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", sans-serif;
   font-weight: 100;
   font-size: 15px;
   line-height: 1.7;
@@ -530,9 +668,10 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5-profile {
   position: relative;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 0px;
   /*margin-bottom: 20px;*/
   padding: 20px 20px;
+  padding-top: 80px;
   display: inline-block;
 }
 
@@ -548,6 +687,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-size: 20px;
   color: #000;
+  vertical-align: middle;
 }
 #fh5-profile .background h4 {
   padding-left: 40px;
@@ -563,26 +703,26 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   line-height: 1.2;
 }
-#fh5-profile .profile .overview {
+#fh5-profile .profile > .overview {
   position: relative;
-  /*padding-top: 30px;*/
   width: 50%;
   height: 100%;
   vertical-align: bottom;
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
 }
-#fh5-profile .profile .overview h2 {
+#fh5-profile .profile > .overview h2 {
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-weight: 100;
   display: inline-block;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
+  margin-top: 20px;
   font-size: 24px;
 }
-#fh5-profile .profile .overview h3 {
+#fh5-profile .profile > .overview h3 {
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-weight: 100;
   display: inline-block;
@@ -591,7 +731,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5-profile .profile .detail {
   position: relative;
-  padding-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 0px;
   width: 100%;
   height: 100%;
   vertical-align: bottom;
@@ -603,9 +744,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-weight: 100;
   display: inline-block;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  font-size: 24px;
+  font-size: 22px;
 }
 #fh5-profile .profile .detail h3 {
   width: 100%;
@@ -613,9 +752,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: 'vdl-logog', 'Hiragino Kaku Gothic ProN W0', "Yu Gothic", 'Roboto', sans-serif;
   font-weight: 100;
   display: inline-block;
-  padding-top: 0px;
-  font-size: 20px;
-  padding-bottom: 0px;
+  font-size: 18px;
 }
 
 
