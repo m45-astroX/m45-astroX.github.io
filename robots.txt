@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow:/css/
+Disallow:/fonts/
+Disallow:/images/
+Disallow:/js/
+Disallow:/sass/
+Sitemap:https://m45-astrox.github.io/sitemap
