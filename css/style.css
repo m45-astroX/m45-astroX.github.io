@@ -724,6 +724,7 @@ h1, h2, h3, h4, h5, h6, figure {
   
 }
 #fh5-astrophoto .astroimg {
+  margin-top: 20px;
   display: inline-block;
   text-align: center;
 }
