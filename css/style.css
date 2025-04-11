@@ -406,6 +406,38 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 10000;
   font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
 }
+#fh5co-hero-rem .container-hero-photo2 {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+  background-image: url(../images/bg/cat.jpg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#fh5co-hero-rem .container-hero-photo2 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  color:#ffffff;
+  margin:0;
+  z-index: 10000;
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+}
+#fh5co-hero-rem .container-hero-photo2 h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,150%);
+  font-size: 18px;
+  color:#ffffff;
+  margin:0;
+  z-index: 10000;
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+}
 #fh5co-hero-rem .container-hero-contact {
   position: relative;
   min-height: 630px;
