@@ -1496,8 +1496,16 @@ h1, h2, h3, h4, h5, h6, figure {
   border-color: #437be2 !important;
 }
 
-
-
+/* プロフィール写真中央揃え用 */
+/*
+.profile-photo-center {
+    display: flex;
+    justify-content: center;
+}
+.profile-photo-center img {
+    margin: 0 auto;
+}
+*/
 
 
 .row-pb-md {
