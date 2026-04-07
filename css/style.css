@@ -493,7 +493,54 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/***/
 
+/***/
+
+
+#fh5co-hero-rem .container-hero-cocktail {
+  position: relative;
+  min-height: 630px;
+  height: 630px;
+  z-index: 1;
+
+  /* ↓ここを好きな画像に変更 */
+  background-image: url(../images/bg/cocktail_bg.JPG);
+
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* タイトル */
+#fh5co-hero-rem .container-hero-cocktail h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0;
+  z-index: 10000;
+
+  letter-spacing: 2px;
+
+  font-family: 'vdl-logog', 'Hiragino Maru Gothic ProN W3', "Yu Gothic", 'Roboto', sans-serif;
+}
+
+/* 少し暗くして文字を見やすくする（おすすめ） */
+#fh5co-hero-rem .container-hero-cocktail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
 
 
 /*************************/
