@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<!-- HEAD -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Y.Aoki's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="近畿大学で天の川銀河の観測研究をしています"/>
+  <meta name="keywords" content="近畿大学, 近大, 青木悠馬, 青木, 悠馬, Aoki, Yuma, 宇宙, 物理学, 天文, X線, X-ray astronomy, astrophysics, astronomy"/>
+  <meta name="author" content="Yuma Aoki"/>
+
+  <!-- Icon -->
+  <link rel="shortcut icon" href="images/icon/icon_v1.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <link href="themify-icons.css" rel="stylesheet">
+
+  <!-- Adobe fonts -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'czu6afb',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function() {
+        h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function() {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try { Typekit.load(config) } catch(e) {}
+      };
+      s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="css/icomoon.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <!-- Flexslider -->
+  <link rel="stylesheet" href="css/flexslider.css">
+  <!-- Pricing -->
+  <link rel="stylesheet" href="css/pricing.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Modernizr JS -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- tier表用の追加CSS -->
+  <style>
+    .tier-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 15px 80px;
+    }
+
+    .tier-description {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .tier-board {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .tier-row {
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid #e9e9e9;
+      min-height: 100px;
+    }
+
+    .tier-row:last-child {
+      border-bottom: none;
+    }
+
+    .tier-label {
+      width: 120px;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    .tier-s { background: #ff5f6d; }
+    .tier-a { background: #ff9a3c; }
+    .tier-b { background: #ffd166; color: #333; }
+    .tier-c { background: #7bd389; }
+    .tier-d { background: #6fa8dc; }
+
+    .tier-items {
+      flex: 1;
+      padding: 18px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      background: #fafafa;
+    }
+
+    .bottle-card {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 16px;
+      color: #333;
+      transition: all 0.2s ease;
+    }
+
+    .bottle-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      border-color: #bbb;
+    }
+
+    .tier-note {
+      margin-top: 35px;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .tier-row {
+        flex-direction: column;
+      }
+
+      .tier-label {
+        width: 100%;
+        min-width: auto;
+        height: 60px;
+        font-size: 28px;
+      }
+
+      .tier-items {
+        padding: 15px;
+      }
+
+      .bottle-card {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<!-- *** BEGIN OF PAGE *** -->
+<body>
+  <div id="page">
+
+    <!-- *** Top *** -->
+    <nav class="fh5co-nav" role="navigation">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h1><a href="index.html">Yuma Aoki's Portfolio</a></h1>
+            </div>
+            <div class="col-xs-6 text-right menu-1">
+              <ul>
+                <span class="buruburu">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li class="active"><a href="research.html">研究成果</a></li>
+                  <li class="active"><a href="profile.html">自己紹介</a></li>
+                  <li class="active"><a href="astrophotography.html">天体写真</a></li>
+                  <li class="active"><a href="gallery.html">画廊</a></li>
+                  <li class="active"><a href="contact.html">Contact</a></li>
+                  <li class="active"><a href="contact_en.html">English</a></li>
+                </span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- *** 表紙 *** -->
+    <aside id="fh5co-hero-rem">
+      <div class="container-hero-bottle animate-box">
+        <h1>酒瓶Tier表</h1>
+      </div>
+    </aside>
+
+    <!-- *** 酒瓶tier表 *** -->
+    <div id="fh5co-contact">
+      <div class="tier-wrapper animate-box">
+        <div class="tier-board">
+
+          <!-- S -->
+          <div class="tier-row">
+            <div class="tier-label tier-s">S</div>
+            <div class="tier-items">
+              <span class="bottle-card">Mawsim TC</span>
+              <span class="bottle-card">ヘンドリックス</span>
+            </div>
+          </div>
+
+          <!-- A -->
+          <div class="tier-row">
+            <div class="tier-label tier-a">A</div>
+            <div class="tier-items">
+              <span class="bottle-card">カンパリ</span>
+              <span class="bottle-card">カルトロン</span>
+              <span class="bottle-card">ヨーグリート</span>
+              <span class="bottle-card">パッソア</span>
+              <span class="bottle-card">ヒプノティック</span>
+              <span class="bottle-card">紫</span>
+              <span class="bottle-card">山崎</span>
+              <span class="bottle-card">翠</span>
+              <span class="bottle-card">ボンベイサファイア</span>
+              <span class="bottle-card">タンカレー No.10</span>
+              <span class="bottle-card">メーカーズマーク</span>
+              <span class="bottle-card">奏（抹茶）</span>
+              <span class="bottle-card">奏（桜）</span>
+            </div>
+          </div>
+
+          <!-- B -->
+          <div class="tier-row">
+            <div class="tier-label tier-b">B</div>
+            <div class="tier-items">
+              <span class="bottle-card">六</span>
+              <span class="bottle-card">青舞</span>
+              <span class="bottle-card">白州</span>
+              <span class="bottle-card">Arran</span>
+              <span class="bottle-card">デュワーズ12年</span>
+              <span class="bottle-card">デュワーズホワイトラベル</span>
+              <span class="bottle-card">タリスカー12年</span>
+              <span class="bottle-card">マイヤーズダーク</span>
+              <span class="bottle-card">フランジェリコ</span>
+              <span class="bottle-card">ミスティア</span>
+              <span class="bottle-card">ディタ</span>
+            </div>
+          </div>
+
+          <!-- C -->
+          <div class="tier-row">
+            <div class="tier-label tier-c">C</div>
+            <div class="tier-items">
+              <span class="bottle-card">タンカレー</span>
+              <span class="bottle-card">ビーフィーター</span>
+              <span class="bottle-card">サイレントプール</span>
+              <span class="bottle-card">季の美</span>
+              <span class="bottle-card">ブルックラディ</span>
+              <span class="bottle-card">アードベッグ8年</span>
+              <span class="bottle-card">カルア</span>
+              <span class="bottle-card">マリブ</span>
+              <span class="bottle-card">ディッサローノ</span>
+              <span class="bottle-card">ガリアーノ</span>
+              <span class="bottle-card">イエガーマイスター</span>
+            </div>
+          </div>
+
+          <!-- D -->
+          <div class="tier-row">
+            <div class="tier-label tier-d">D</div>
+            <div class="tier-items">
+              <span class="bottle-card">桜尾</span>
+              <span class="bottle-card">ジェット</span>
+            </div>
+          </div>
+
+          <!-- E -->
+          <div class="tier-row">
+            <div class="tier-label" style="background:#444;">E</div>
+            <div class="tier-items">
+              <span class="bottle-card">ゴードン</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- *** フッター *** -->
+    <footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row copyright">
+          <div class="col-md-12 text-center">
+            <p>&copy; 2025 Yuma Aoki All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="js/jquery.waypoints.min.js"></script>
+  <!-- Stellar Parallax -->
+  <script src="js/jquery.stellar.min.js"></script>
+  <!-- Carousel -->
+  <script src="js/owl.carousel.min.js"></script>
+  <!-- Flexslider -->
+  <script src="js/jquery.flexslider-min.js"></script>
+  <!-- countTo -->
+  <script src="js/jquery.countTo.js"></script>
+  <!-- Magnific Popup -->
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/magnific-popup-options.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+  <script src="js/google_map.js"></script>
+  <!-- Count Down -->
+  <script src="js/simplyCountdown.js"></script>
+  <!-- Main -->
+  <script src="js/main.js"></script>
+
+  <script>
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+    simplyCountdown('.simply-countdown-one', {
+      year: d.getFullYear(),
+      month: d.getMonth() + 1,
+      day: d.getDate()
+    });
+
+    $('#simply-countdown-losange').simplyCountdown({
+      year: d.getFullYear(),
+      month: d.getMonth() + 1,
+      day: d.getDate(),
+      enableUtc: false
+    });
+  </script>
+</body>
+</html>
