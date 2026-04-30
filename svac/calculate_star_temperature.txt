@@ -1,58 +1,80 @@
-###
-### 星の温度を測定するプログラム
-###
-### Author : Yuma Aoki (Kindai Univ.)
-### Version : v2.0
-###
-
 from pathlib import Path
+import os
 
 import numpy as np
 import matplotlib.pyplot as plt
 from astropy.io import fits
-from scipy.optimize import curve_fit
+from astropy import units as u
+from scipy.optimize import minimize_scalar
 
+### 設定 ###
+OBS_FILE = None
 
-### 設定
-FILE = None
+GRID = "ck04models"
+FIT_MIN = 2000.0
+FIT_MAX = 3000.0
+T0 = 5000.0
+T_LOW = 3000.0
+T_HIGH = 20000.0
+METALLICITY = 0.0
+LOGG = 4.0
+EBV = 0.0
+
 BIN_WIDTH = 25.0
 SNR_MIN = 3.0
 Y_PERCENTILE = 99
 
 
-### モデル設定
-#MODEL = "blackbody"
-MODEL = "balmer"
-FIT_MIN = 1500.0
-FIT_MAX = 3000.0
-T0 = 5000
-T_LOW = 2500.0
-T_HIGH = 30000.0
+### Reference データのパス設定 ###
+catalog_files = sorted(Path("/content/trds").rglob(f"grid/{GRID}/catalog.fits"))
+
+if len(catalog_files) == 0:
+    raise FileNotFoundError(
+        f"{GRID} の catalog.fits が見つかりません。\n"
+        "モデルデータをダウンロード・展開できているか確認してください。"
+    )
+
+cdbs_root = catalog_files[0].parents[2]
+os.environ["PYSYN_CDBS"] = str(cdbs_root)
+
+import stsynphot as stsyn
+from stsynphot.config import overwrite_synphot_config
+from stsynphot.catalog import grid_to_spec
+
+overwrite_synphot_config(str(cdbs_root))
+
+print(f"PYSYN_CDBS = {cdbs_root}")
 
 
-### ファイル読み込み
-if FILE is None:
-    fits_files = sorted(Path(".").glob("*aspec*.fits"))
-    if len(fits_files) == 0:
+### スペクトル読み込み ###
+if OBS_FILE is None:
+    obs_files = sorted(Path(".").glob("*aspec*.fits"))
+
+    if len(obs_files) == 0:
         raise FileNotFoundError("*aspec*.fits が見つかりません")
-    filename = fits_files[0]
+
+    obs_file = obs_files[0]
 else:
-    filename = Path(FILE)
-    if not filename.exists():
-        raise FileNotFoundError(f"{filename} が見つかりません")
+    obs_file = Path(OBS_FILE)
 
-print(f"Reading: {filename}")
+    if not obs_file.exists():
+        raise FileNotFoundError(f"{obs_file} が見つかりません")
 
-with fits.open(filename) as hdul:
+print(f"Reading observation: {obs_file}")
+
+with fits.open(obs_file) as hdul:
     data = hdul[1].data
+
     wave = np.ravel(data["WAVELENGTH"])
     flux = np.ravel(data["FLUX"])
+
     if "SNR" in data.columns.names:
         snr = np.ravel(data["SNR"])
     else:
         snr = np.full_like(flux, np.inf)
 
-### マスク ###
+
+### データ処理 ###
 mask = (
     np.isfinite(wave)
     & np.isfinite(flux)
@@ -63,12 +85,12 @@ mask = (
 
 wave = wave[mask]
 flux = flux[mask]
+
 order = np.argsort(wave)
 wave = wave[order]
 flux = flux[order]
 
-if len(wave) == 0:
-    raise RuntimeError("有効なデータ点がありません。")
+print(f"Observed wavelength range: {wave.min():.1f} - {wave.max():.1f} Å")
 
 
 ### ビニング ###
@@ -87,42 +109,9 @@ bin_flux = np.array([
     for lo, hi in zip(edges[:-1], edges[1:])
 ])
 
-mask = np.isfinite(bin_flux)
+mask = np.isfinite(bin_flux) & (bin_flux > 0)
 bin_wave = bin_wave[mask]
 bin_flux = bin_flux[mask]
-
-
-### モデル ###
-def log_blackbody(wave_A, T, logA):
-    h = 6.62607015e-27
-    c = 2.99792458e10
-    k_B = 1.380649e-16
-
-    wave_cm = wave_A * 1e-8
-
-    x = h * c / (wave_cm * k_B * T)
-    x = np.clip(x, 1e-6, 700)
-
-    B_lambda = (2 * h * c**2) / wave_cm**5 / np.expm1(x)
-    B_lambda *= 1e-8  # per cm -> per Angstrom
-
-    return logA + np.log10(B_lambda)
-
-def balmer_absorption(wave_A, tau_balmer):
-    balmer_edge = 3646.0
-
-    tau = np.zeros_like(wave_A, dtype=float)
-
-    m = wave_A < balmer_edge
-    tau[m] = tau_balmer * (wave_A[m] / balmer_edge) ** 3
-
-    return np.exp(-tau)
-
-def log_blackbody_balmer(wave_A, T, logA, tau_balmer):
-    transmission = balmer_absorption(wave_A, tau_balmer)
-    transmission = np.clip(transmission, 1e-300, 1.0)
-
-    return log_blackbody(wave_A, T, logA) + np.log10(transmission)
 
 
 ### フィット ###
@@ -133,74 +122,122 @@ fit_mask = (
 )
 
 x_fit = bin_wave[fit_mask]
-y_fit = np.log10(bin_flux[fit_mask])
+y_fit = bin_flux[fit_mask]
 
 if len(x_fit) < 5:
-    raise RuntimeError("フィット点が少なすぎます。FIT_MIN/FIT_MAX を見直してください。")
-
-logA0 = np.nanmedian(y_fit - log_blackbody(x_fit, T0, 0.0))
-
-if MODEL == "blackbody":
-    popt, pcov = curve_fit(
-        log_blackbody,
-        x_fit,
-        y_fit,
-        p0=[T0, logA0],
-        bounds=([T_LOW, -100.0], [T_HIGH, 100.0]),
-        maxfev=20000,
+    raise RuntimeError(
+        "フィット点が少なすぎます。\n"
+        f"観測データの範囲は {wave.min():.0f}–{wave.max():.0f} Å です。\n"
+        f"指定したフィット範囲は {FIT_MIN:.0f}–{FIT_MAX:.0f} Å です。"
     )
 
-    T_fit, logA_fit = popt
-    T_err, logA_err = np.sqrt(np.diag(pcov))
 
-    tau_fit = None
-    tau_err = None
-
-    model_flux = 10 ** log_blackbody(bin_wave, T_fit, logA_fit)
-    model_label = f"Blackbody fit: T = {T_fit:.0f} K"
-
-elif MODEL == "balmer":
-    popt, pcov = curve_fit(
-        log_blackbody_balmer,
-        x_fit,
-        y_fit,
-        p0=[T0, logA0, 1.0],
-        bounds=([T_LOW, -100.0, 0.0], [T_HIGH, 100.0, 10.0]),
-        maxfev=20000,
+### 恒星大気モデル ###
+def get_model_flux(wave_A, Teff):
+    """
+    恒星大気モデルを観測波長でサンプリングする。
+    wave_A: Angstrom
+    Teff: K
+    """
+    sp = grid_to_spec(
+        GRID,
+        Teff,
+        METALLICITY,
+        LOGG,
     )
 
-    T_fit, logA_fit, tau_fit = popt
-    T_err, logA_err, tau_err = np.sqrt(np.diag(pcov))
+    if EBV != 0.0:
+        sp = sp * stsyn.ebmvx("mwavg", EBV)
 
-    model_flux = 10 ** log_blackbody_balmer(bin_wave, T_fit, logA_fit, tau_fit)
-    bb_flux = 10 ** log_blackbody(bin_wave, T_fit, logA_fit)
+    w = wave_A * u.AA
 
-    model_label = f"Blackbody + Balmer absorption: T = {T_fit:.0f} K"
+    f = sp(w)
+    f = f.to(
+        u.erg / u.s / u.cm**2 / u.AA,
+        equivalencies=u.spectral_density(w),
+    )
 
-else:
-    raise ValueError("MODEL は 'blackbody' または 'balmer' にしてください。")
+    return np.asarray(f.value)
+
+
+def fit_log_scale(obs_flux, model_flux):
+    """
+    モデルの形は固定し、明るさの規格化だけ合わせる。
+    """
+    m = (
+        np.isfinite(obs_flux)
+        & np.isfinite(model_flux)
+        & (obs_flux > 0)
+        & (model_flux > 0)
+    )
+
+    return np.nanmedian(np.log10(obs_flux[m]) - np.log10(model_flux[m]))
+
+
+def score_temperature(Teff):
+    """
+    Teffごとのずれを計算する。
+    値が小さいほどよい。
+    """
+    try:
+        model_flux = get_model_flux(x_fit, Teff)
+    except Exception:
+        return np.inf
+
+    m = (
+        np.isfinite(y_fit)
+        & np.isfinite(model_flux)
+        & (y_fit > 0)
+        & (model_flux > 0)
+    )
+
+    if np.sum(m) < 5:
+        return np.inf
+
+    log_scale = fit_log_scale(y_fit[m], model_flux[m])
+
+    residual = np.log10(y_fit[m]) - (np.log10(model_flux[m]) + log_scale)
+
+    return np.nanmean(residual**2)
+
+temps = np.linspace(T_LOW, T_HIGH, 100)
+scores = np.array([score_temperature(T) for T in temps])
+
+best_index = np.nanargmin(scores)
+
+T_fit = temps[best_index]
+best_score = scores[best_index]
+
+model_fit_flux = get_model_flux(bin_wave, T_fit)
+
+fit_range_model_flux = get_model_flux(x_fit, T_fit)
+log_scale = fit_log_scale(y_fit, fit_range_model_flux)
+
+model_fit_flux *= 10**log_scale
 
 
 ### 結果の表示 ###
-print("\n結果")
-#print(f"MODEL     = {MODEL}")
-#print(f"logA      = {logA_fit:.3f} +/- {logA_err:.3f}")
-print(f"温度 = {T_fit:.0f} +/- {T_err:.0f} K")
+print(f"温度 = {T_fit:.0f} K")
 
-#if tau_fit is not None:
-#    print(f"tau_balmer = {tau_fit:.3f} +/- {tau_err:.3f}")
-
-#print(f"BIN_WIDTH = {BIN_WIDTH:.1f} Angstrom")
-#print(f"FIT_RANGE = {FIT_MIN:.0f} - {FIT_MAX:.0f} Angstrom")
-
-if abs(T_fit - T_LOW) < 1:
-    print("Warning: 温度が下限に張り付いています。フィット範囲またはモデルが不適切な可能性があります。")
-
-if abs(T_fit - T_HIGH) < 1:
-    print("Warning: 温度が上限に張り付いています。フィット範囲またはモデルが不適切な可能性があります。")
+#print("\n===== Atmosphere model fit result =====")
+#print(f"GRID      = {GRID}")
+#print(f"Teff      = {T_fit:.0f} K")
+#print(f"log g     = {LOGG:.2f}")
+#print(f"[M/H]     = {METALLICITY:.2f}")
+#print(f"E(B-V)    = {EBV:.3f}")
+#print(f"log scale = {log_scale:.3f}")
+#print(f"score     = {best_score:.5e}")
+#print(f"FIT_RANGE = {FIT_MIN:.0f} - {FIT_MAX:.0f} Å")
 
 
-### グラフ描画 ###
+if abs(T_fit - T_LOW) < 10:
+    print("Warning: Teff が下限に近いです。範囲・モデル・log g を見直してください。")
+
+if abs(T_fit - T_HIGH) < 10:
+    print("Warning: Teff が上限に近いです。範囲・モデル・log g を見直してください。")
+
+
+### グラフ表示 ###
 for use_log in [False, True]:
     plt.figure(figsize=(10, 5))
 
@@ -208,32 +245,15 @@ for use_log in [False, True]:
         bin_wave,
         bin_flux,
         lw=1.2,
-        label=f"Binned spectrum ({BIN_WIDTH:.0f} Å bins)",
+        label=f"Observed spectrum ({BIN_WIDTH:.0f} Å bins)",
     )
-
-    if MODEL == "balmer":
-        plt.plot(
-            bin_wave,
-            bb_flux,
-            lw=1.5,
-            ls="--",
-            label=f"Blackbody only: T = {T_fit:.0f} K",
-        )
 
     plt.plot(
         bin_wave,
-        model_flux,
+        model_fit_flux,
         lw=2.0,
-        label=model_label,
+        label=f"{GRID}: Teff = {T_fit:.0f} K",
     )
-
-    if MODEL == "balmer":
-        plt.axvline(
-            3646,
-            lw=1.0,
-            ls=":",
-            label="Balmer edge: 3646 Å",
-        )
 
     if use_log:
         plt.yscale("log")
@@ -252,3 +272,16 @@ for use_log in [False, True]:
     plt.grid(alpha=0.3)
     plt.tight_layout()
     plt.show()
+
+temps = np.linspace(T_LOW, T_HIGH, 50)
+scores = np.array([score_temperature(T) for T in temps])
+
+plt.figure(figsize=(7, 5))
+plt.plot(temps, scores, marker="o")
+plt.axvline(T_fit, ls="--", label=f"Best: {T_fit:.0f} K")
+plt.xlabel(r"$T_{\rm eff}$ [K]")
+plt.ylabel("Mean squared residual in log flux")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.show()
