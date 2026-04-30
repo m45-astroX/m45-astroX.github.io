@@ -1,0 +1,254 @@
+###
+### 星の温度を測定するプログラム
+###
+### Author : Yuma Aoki (Kindai Univ.)
+### Version : v2.0
+###
+
+from pathlib import Path
+
+import numpy as np
+import matplotlib.pyplot as plt
+from astropy.io import fits
+from scipy.optimize import curve_fit
+
+
+### 設定
+FILE = None
+BIN_WIDTH = 25.0
+SNR_MIN = 3.0
+Y_PERCENTILE = 99
+
+
+### モデル設定
+#MODEL = "blackbody"
+MODEL = "balmer"
+FIT_MIN = 1500.0
+FIT_MAX = 3000.0
+T0 = 5000
+T_LOW = 2500.0
+T_HIGH = 30000.0
+
+
+### ファイル読み込み
+if FILE is None:
+    fits_files = sorted(Path(".").glob("*aspec*.fits"))
+    if len(fits_files) == 0:
+        raise FileNotFoundError("*aspec*.fits が見つかりません")
+    filename = fits_files[0]
+else:
+    filename = Path(FILE)
+    if not filename.exists():
+        raise FileNotFoundError(f"{filename} が見つかりません")
+
+print(f"Reading: {filename}")
+
+with fits.open(filename) as hdul:
+    data = hdul[1].data
+    wave = np.ravel(data["WAVELENGTH"])
+    flux = np.ravel(data["FLUX"])
+    if "SNR" in data.columns.names:
+        snr = np.ravel(data["SNR"])
+    else:
+        snr = np.full_like(flux, np.inf)
+
+### マスク ###
+mask = (
+    np.isfinite(wave)
+    & np.isfinite(flux)
+    & np.isfinite(snr)
+    & (flux > 0)
+    & (snr > SNR_MIN)
+)
+
+wave = wave[mask]
+flux = flux[mask]
+order = np.argsort(wave)
+wave = wave[order]
+flux = flux[order]
+
+if len(wave) == 0:
+    raise RuntimeError("有効なデータ点がありません。")
+
+
+### ビニング ###
+edges = np.arange(
+    np.floor(wave.min() / BIN_WIDTH) * BIN_WIDTH,
+    np.ceil(wave.max() / BIN_WIDTH) * BIN_WIDTH + BIN_WIDTH,
+    BIN_WIDTH,
+)
+
+bin_wave = 0.5 * (edges[:-1] + edges[1:])
+
+bin_flux = np.array([
+    np.nanmedian(flux[(wave >= lo) & (wave < hi)])
+    if np.any((wave >= lo) & (wave < hi))
+    else np.nan
+    for lo, hi in zip(edges[:-1], edges[1:])
+])
+
+mask = np.isfinite(bin_flux)
+bin_wave = bin_wave[mask]
+bin_flux = bin_flux[mask]
+
+
+### モデル ###
+def log_blackbody(wave_A, T, logA):
+    h = 6.62607015e-27
+    c = 2.99792458e10
+    k_B = 1.380649e-16
+
+    wave_cm = wave_A * 1e-8
+
+    x = h * c / (wave_cm * k_B * T)
+    x = np.clip(x, 1e-6, 700)
+
+    B_lambda = (2 * h * c**2) / wave_cm**5 / np.expm1(x)
+    B_lambda *= 1e-8  # per cm -> per Angstrom
+
+    return logA + np.log10(B_lambda)
+
+def balmer_absorption(wave_A, tau_balmer):
+    balmer_edge = 3646.0
+
+    tau = np.zeros_like(wave_A, dtype=float)
+
+    m = wave_A < balmer_edge
+    tau[m] = tau_balmer * (wave_A[m] / balmer_edge) ** 3
+
+    return np.exp(-tau)
+
+def log_blackbody_balmer(wave_A, T, logA, tau_balmer):
+    transmission = balmer_absorption(wave_A, tau_balmer)
+    transmission = np.clip(transmission, 1e-300, 1.0)
+
+    return log_blackbody(wave_A, T, logA) + np.log10(transmission)
+
+
+### フィット ###
+fit_mask = (
+    (bin_wave > FIT_MIN)
+    & (bin_wave < FIT_MAX)
+    & (bin_flux > 0)
+)
+
+x_fit = bin_wave[fit_mask]
+y_fit = np.log10(bin_flux[fit_mask])
+
+if len(x_fit) < 5:
+    raise RuntimeError("フィット点が少なすぎます。FIT_MIN/FIT_MAX を見直してください。")
+
+logA0 = np.nanmedian(y_fit - log_blackbody(x_fit, T0, 0.0))
+
+if MODEL == "blackbody":
+    popt, pcov = curve_fit(
+        log_blackbody,
+        x_fit,
+        y_fit,
+        p0=[T0, logA0],
+        bounds=([T_LOW, -100.0], [T_HIGH, 100.0]),
+        maxfev=20000,
+    )
+
+    T_fit, logA_fit = popt
+    T_err, logA_err = np.sqrt(np.diag(pcov))
+
+    tau_fit = None
+    tau_err = None
+
+    model_flux = 10 ** log_blackbody(bin_wave, T_fit, logA_fit)
+    model_label = f"Blackbody fit: T = {T_fit:.0f} K"
+
+elif MODEL == "balmer":
+    popt, pcov = curve_fit(
+        log_blackbody_balmer,
+        x_fit,
+        y_fit,
+        p0=[T0, logA0, 1.0],
+        bounds=([T_LOW, -100.0, 0.0], [T_HIGH, 100.0, 10.0]),
+        maxfev=20000,
+    )
+
+    T_fit, logA_fit, tau_fit = popt
+    T_err, logA_err, tau_err = np.sqrt(np.diag(pcov))
+
+    model_flux = 10 ** log_blackbody_balmer(bin_wave, T_fit, logA_fit, tau_fit)
+    bb_flux = 10 ** log_blackbody(bin_wave, T_fit, logA_fit)
+
+    model_label = f"Blackbody + Balmer absorption: T = {T_fit:.0f} K"
+
+else:
+    raise ValueError("MODEL は 'blackbody' または 'balmer' にしてください。")
+
+
+### 結果の表示 ###
+print("\n結果")
+#print(f"MODEL     = {MODEL}")
+#print(f"logA      = {logA_fit:.3f} +/- {logA_err:.3f}")
+print(f"温度 = {T_fit:.0f} +/- {T_err:.0f} K")
+
+#if tau_fit is not None:
+#    print(f"tau_balmer = {tau_fit:.3f} +/- {tau_err:.3f}")
+
+#print(f"BIN_WIDTH = {BIN_WIDTH:.1f} Angstrom")
+#print(f"FIT_RANGE = {FIT_MIN:.0f} - {FIT_MAX:.0f} Angstrom")
+
+if abs(T_fit - T_LOW) < 1:
+    print("Warning: 温度が下限に張り付いています。フィット範囲またはモデルが不適切な可能性があります。")
+
+if abs(T_fit - T_HIGH) < 1:
+    print("Warning: 温度が上限に張り付いています。フィット範囲またはモデルが不適切な可能性があります。")
+
+
+### グラフ描画 ###
+for use_log in [False, True]:
+    plt.figure(figsize=(10, 5))
+
+    plt.plot(
+        bin_wave,
+        bin_flux,
+        lw=1.2,
+        label=f"Binned spectrum ({BIN_WIDTH:.0f} Å bins)",
+    )
+
+    if MODEL == "balmer":
+        plt.plot(
+            bin_wave,
+            bb_flux,
+            lw=1.5,
+            ls="--",
+            label=f"Blackbody only: T = {T_fit:.0f} K",
+        )
+
+    plt.plot(
+        bin_wave,
+        model_flux,
+        lw=2.0,
+        label=model_label,
+    )
+
+    if MODEL == "balmer":
+        plt.axvline(
+            3646,
+            lw=1.0,
+            ls=":",
+            label="Balmer edge: 3646 Å",
+        )
+
+    if use_log:
+        plt.yscale("log")
+    else:
+        plot_mask = (
+            (bin_wave > FIT_MIN)
+            & (bin_wave < FIT_MAX)
+            & (bin_flux > 0)
+        )
+        plt.ylim(0, np.nanpercentile(bin_flux[plot_mask], Y_PERCENTILE))
+
+    plt.xlabel(r"Wavelength [$\AA$]")
+    plt.ylabel(r"Flux [erg s$^{-1}$ cm$^{-2}$ $\AA^{-1}$]")
+    plt.xlim(FIT_MIN, FIT_MAX)
+    plt.legend()
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.show()
