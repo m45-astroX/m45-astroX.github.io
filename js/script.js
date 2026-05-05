@@ -1,6 +1,6 @@
 window.onload = function () {
-  loadTextFile("./calculate_star_temperature.txt", "calculate_code");
-  loadTextFile("./download_data.txt", "download_code");
+  loadTextFile("./calculate_star_temperature.py", "calculate_code");
+  loadTextFile("./download_data.py", "download_code");
 };
 
 function loadTextFile(filePath, elementId) {
