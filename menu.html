@@ -72,7 +72,6 @@
     <script src="js/respond.min.js"></script>
   <![endif]-->
 
-
   <!-- カクテルメニュー用の追加CSS -->
   <style>
     .menu-wrapper {
@@ -202,107 +201,106 @@
 
             <form
               id="orderForm"
-              action="https://script.google.com/macros/s/AKfycbzExCkT2D2VVYcTo6ueNKT6M9vFP3Hc8RdWrBASwS-D3-m7nhfzM8oVOTGN3mPUr0hx/exec"
+              action="https://script.google.com/macros/s/AKfycbx70agV78oYVBsjMtTm4_A5BD9r_1wOBHGDLleOgwvDrXOGyj3SEIXrc4NiV-a_vTQQ/exec"
               method="POST"
               target="hidden_iframe"
               onsubmit="return handleSubmit();"
             >
-              <label for="cocktail">カクテル</label>
-              <select id="cocktail" name="cocktail" required>
-                <option value="">選択してください</option>
 
-                <optgroup label="フルーティー（アルコール弱め）">
-                  <option value="キウイのジントニック">キウイのジントニック</option>
-                  <option value="いちごのジントニック">いちごのジントニック</option>
-                  <option value="オレンジブロッサム">オレンジブロッサム</option>
-                  <option value="ゴールデンスクリュー">ゴールデンスクリュー</option>
-                  <option value="スクリュードライバー">スクリュードライバー</option>
-                  <option value="オーガスタセブン">オーガスタセブン</option>
-                  <option value="パッシモニ">パッシモニ</option>
-                  <option value="ディタモーニ">ディタモーニ</option>
-                  <option value="カンパリオレンジ">カンパリオレンジ</option>
-                  <option value="ファジーネーブル">ファジーネーブル</option>
-                  <option value="ディタオレンジ">ディタオレンジ</option>
-                  <option value="ぶどうトニック">ぶどうトニック</option>
-                  <option value="ピーチソーダ">ピーチソーダ</option>
-                  <option value="ぶどう&amp;ピーチトニック">ぶどう&amp;ピーチトニック</option>
-                  <option value="カシスオレンジ">カシスオレンジ</option>
-                  <option value="カシスソーダ">カシスソーダ</option>
-                  <option value="マリブパイン">マリブパイン</option>
-                </optgroup>
+              <div class="form-group text-left">
+                <label for="cocktail">カクテル</label>
+                <select id="cocktail" name="cocktail" class="form-control" required>
+                  <option value="">選択してください</option>
 
-                <optgroup label="さっぱり（アルコール弱め）">
-                  <option value="ハイボール">ハイボール</option>
-                  <option value="ジンジャーハイボール">ジンジャーハイボール</option>
-                  <option value="ジントニック">ジントニック</option>
-                  <option value="ジンバック">ジンバック</option>
-                  <option value="ジンリッキー">ジンリッキー</option>
-                  <option value="ジンソーダ">ジンソーダ</option>
-                  <option value="ジンコーク">ジンコーク</option>
-                  <option value="カシスバック">カシスバック</option>
-                  <option value="カシスウーロン">カシスウーロン</option>
-                  <option value="レゲエパンチ">レゲエパンチ</option>
-                  <option value="スプモーニ">スプモーニ</option>
-                  <option value="モスコミュール">モスコミュール</option>
-                  <option value="チャイナブルー">チャイナブルー</option>
-                  <option value="桜トニック">桜トニック</option>
-                  <option value="桜スプモーニ">桜スプモーニ</option>
-                  <option value="水星">水星</option>
-                </optgroup>
+                  <optgroup label="フルーティー（アルコール弱め）">
+                    <option value="キウイのジントニック">キウイのジントニック</option>
+                    <option value="いちごのジントニック">いちごのジントニック</option>
+                    <option value="オレンジブロッサム">オレンジブロッサム</option>
+                    <option value="ゴールデンスクリュー">ゴールデンスクリュー</option>
+                    <option value="スクリュードライバー">スクリュードライバー</option>
+                    <option value="オーガスタセブン">オーガスタセブン</option>
+                    <option value="パッシモニ">パッシモニ</option>
+                    <option value="ディタモーニ">ディタモーニ</option>
+                    <option value="カンパリオレンジ">カンパリオレンジ</option>
+                    <option value="ファジーネーブル">ファジーネーブル</option>
+                    <option value="ディタオレンジ">ディタオレンジ</option>
+                    <option value="ぶどうトニック">ぶどうトニック</option>
+                    <option value="ピーチソーダ">ピーチソーダ</option>
+                    <option value="ぶどう&amp;ピーチトニック">ぶどう&amp;ピーチトニック</option>
+                    <option value="カシスオレンジ">カシスオレンジ</option>
+                    <option value="カシスソーダ">カシスソーダ</option>
+                    <option value="マリブパイン">マリブパイン</option>
+                  </optgroup>
 
-                <optgroup label="こってり（アルコール弱め）">
-                  <option value="キューバリブレ">キューバリブレ</option>
-                  <option value="マリブコーク">マリブコーク</option>
-                  <option value="マリブサーフ">マリブサーフ</option>
-                  <option value="カルアミルク">カルアミルク</option>
-                  <option value="ジュピター">ジュピター</option>
-                  <option value="照葉樹林">照葉樹林</option>
-                </optgroup>
+                  <optgroup label="さっぱり（アルコール弱め）">
+                    <option value="ハイボール">ハイボール</option>
+                    <option value="ジンジャーハイボール">ジンジャーハイボール</option>
+                    <option value="ジントニック">ジントニック</option>
+                    <option value="ジンバック">ジンバック</option>
+                    <option value="ジンリッキー">ジンリッキー</option>
+                    <option value="ジンソーダ">ジンソーダ</option>
+                    <option value="ジンコーク">ジンコーク</option>
+                    <option value="カシスバック">カシスバック</option>
+                    <option value="カシスウーロン">カシスウーロン</option>
+                    <option value="レゲエパンチ">レゲエパンチ</option>
+                    <option value="スプモーニ">スプモーニ</option>
+                    <option value="モスコミュール">モスコミュール</option>
+                    <option value="チャイナブルー">チャイナブルー</option>
+                    <option value="桜トニック">桜トニック</option>
+                    <option value="桜スプモーニ">桜スプモーニ</option>
+                    <option value="水星">水星</option>
+                  </optgroup>
 
-                <optgroup label="甘い系（アルコール強め）">
-                  <option value="キャラメルプラネット">キャラメルプラネット</option>
-                  <option value="グラスホッパー">グラスホッパー</option>
-                  <option value="フランジェリコホワイトルシアン">フランジェリコホワイトルシアン</option>
-                  <option value="ゴールデンキャデラック">ゴールデンキャデラック</option>
-                </optgroup>
+                  <optgroup label="こってり（アルコール弱め）">
+                    <option value="キューバリブレ">キューバリブレ</option>
+                    <option value="マリブコーク">マリブコーク</option>
+                    <option value="マリブサーフ">マリブサーフ</option>
+                    <option value="カルアミルク">カルアミルク</option>
+                    <option value="ジュピター">ジュピター</option>
+                    <option value="照葉樹林">照葉樹林</option>
+                  </optgroup>
 
-                <optgroup label="フルーティー（アルコール強め）">
-                  <option value="ぶどうのホワイトレディ">ぶどうのホワイトレディ</option>
-                  <option value="ピーチのホワイトレディ">ピーチのホワイトレディ</option>
-                  <option value="キウイのギムレット">キウイのギムレット</option>
-                  <option value="いちごのギムレット">いちごのギムレット</option>
-                </optgroup>
+                  <optgroup label="甘い系（アルコール強め）">
+                    <option value="キャラメルプラネット">キャラメルプラネット</option>
+                    <option value="グラスホッパー">グラスホッパー</option>
+                    <option value="フランジェリコホワイトルシアン">フランジェリコホワイトルシアン</option>
+                    <option value="ゴールデンキャデラック">ゴールデンキャデラック</option>
+                  </optgroup>
 
-                <optgroup label="さっぱり（アルコール強め）">
-                  <option value="ギムレット">ギムレット</option>
-                  <option value="ホワイトレディ">ホワイトレディ</option>
-                  <option value="ブルームーン">ブルームーン</option>
-                  <option value="コスモバルク">コスモバルク</option>
-                  <option value="楊貴妃">楊貴妃</option>
-                  <option value="パッショネートコスモ">パッショネートコスモ</option>
-                </optgroup>
+                  <optgroup label="フルーティー（アルコール強め）">
+                    <option value="ぶどうのホワイトレディ">ぶどうのホワイトレディ</option>
+                    <option value="ピーチのホワイトレディ">ピーチのホワイトレディ</option>
+                    <option value="キウイのギムレット">キウイのギムレット</option>
+                    <option value="いちごのギムレット">いちごのギムレット</option>
+                  </optgroup>
 
-                <optgroup label="こってり強め">
-                  <option value="ブラックルシアン">ブラックルシアン</option>
-                  <option value="ホワイトルシアン">ホワイトルシアン</option>
-                  <option value="ゴッドファザー">ゴッドファザー</option>
-                  <option value="オールドファッションド">オールドファッションド</option>
-                </optgroup>
+                  <optgroup label="さっぱり（アルコール強め）">
+                    <option value="ギムレット">ギムレット</option>
+                    <option value="ホワイトレディ">ホワイトレディ</option>
+                    <option value="ブルームーン">ブルームーン</option>
+                    <option value="コスモバルク">コスモバルク</option>
+                    <option value="楊貴妃">楊貴妃</option>
+                    <option value="パッショネートコスモ">パッショネートコスモ</option>
+                  </optgroup>
 
-                <optgroup label="その他">
+                  <optgroup label="こってり強め">
+                    <option value="ブラックルシアン">ブラックルシアン</option>
+                    <option value="ホワイトルシアン">ホワイトルシアン</option>
+                    <option value="ゴッドファザー">ゴッドファザー</option>
+                    <option value="オールドファッションド">オールドファッションド</option>
+                  </optgroup>
+
                   <option value="その他">その他</option>
-                </optgroup>
+                </select>
+              </div>
 
-              </select>
+              <div class="form-group text-left">
+                <label for="name">名前</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+              </div>
 
-              <br><br>
+              <button type="submit" id="submitButton" class="btn btn-primary">送信</button>
 
-              <label for="name">名前</label>
-              <input type="text" id="name" name="name" required>
-
-              <br><br>
-
-              <button type="submit" id="submitButton">送信</button>
             </form>
 
             <iframe
@@ -341,134 +339,135 @@
       </div>
     </div>
 
-
     <div id="fh5-profile">
-		<div class="container">
+      <div class="container">
 
-			<div class="row animate-box">
-				<div class="background  col-md-6 col-md-offset-3 text-center">
-					<h2>モクテルはこちら</h2>
-				</div>
-			</div>
+        <div class="row animate-box">
+          <div class="background col-md-6 col-md-offset-3 text-center">
+            <h2>モクテルはこちら</h2>
+          </div>
+        </div>
 
-      <div class="background row animate-box text-center">
-				
-				<h3><a href="menu_mocktail.html">モクテルメニュー</a></h3>
-					
-			</div>
-			
-		</div>
-  </div>  
-
+        <div class="background row animate-box text-center">
+          <h3><a href="menu_mocktail.html">モクテルメニュー</a></h3>
+        </div>
+        
+      </div>
+    </div>  
 
     <!-- *** カクテルtier表 *** -->
     <div id="fh5co-contact">
-      	<!-- *** 
-		<div class="container">
-        <div class="row">
-          <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-contact">
-              <h2>カクテル tier 表</h2>
-              <p class="tier-description">
-				
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-		-->
+
       <div class="menu-wrapper animate-box">
         <div class="menu-board">
+
           <section class="menu-section">
             <h1 class="menu-category">フルーティー（アルコール弱め）</h1>
+
             <div class="cocktail-item">
               <h2>キウイのジントニック（青緑色） </h2>
               <h3>キウイ+ジン+トニック</h3>
               <h3>キウイの酸味とトニックの甘み、苦味がマッチして非常に美味しいカクテル。果肉が入っていて美味しい。</h3>
               <img width="50%" src="images/cocktail/kiwi_gin_tonic.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>いちごのジントニック（赤色） </h2>
               <h3>いちご+ジン+トニック</h3>
               <h3>いちごの酸味とトニックの甘み、苦味がマッチして非常に美味しいカクテル。果肉が入っていて美味しい。</h3>
               <img width="50%" src="images/cocktail/strawberry_gin_tonic.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>オレンジブロッサム（橙色）</h2>
               <h3>ジン+オレンジ</h3>
               <h3>ジンのボタニカル（植物）とオレンジの酸味のバランスが絶妙。オレンジの酸味のおかげでさっぱりしている。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ゴールデンスクリュー（橙色）</h2>
               <h3>ジン+オレンジ+ビターズ</h3>
               <h3>ジンのボタニカル、オレンジの酸味、ビターズの苦味のバランスがちょうどいい。通なカクテル。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>スクリュードライバー（橙色）</h2>
               <h3>ウォッカ+オレンジ</h3>
               <h3>ただのオレンジジュースを飲んでいるような感覚でスルッと飲める。飲み過ぎ注意。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>オーガスタセブン（橙色）</h2>
               <h3>パッションフルーツ+パイン+レモン</h3>
               <h3>梅田の老舗バー「オーガスタ」のマスター品野氏が7番目に考案したカクテル。Sランク級のおいしさで、他店のバーテンダーが嫉妬するレベル。</h3>
               <img width="50%" src="images/cocktail/augasta_seven.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>パッシモニ（橙色）</h2>
               <h3>パッションフルーツ+グレープフルーツ+トニック</h3>
               <h3>バッションフルーツがほのかに香る王道カクテル。通ぶれるくらいに知名度はないが、かなり飲みやすい。</h3>
               <img width="50%" src="images/cocktail/passimoni.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ディタモーニ（黄色）</h2>
               <h3>ライチ+グレープフルーツ+トニック</h3>
               <h3>ライチがほのかに香る王道カクテル。ライチ好きなら飲んでおくべき定番カクテル。</h3>
               <img width="50%" src="images/cocktail/lychee_moni.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>カンパリオレンジ（橙色）</h2>
               <h3>薬草系+オレンジ</h3>
               <h3>苦味と酸味、甘みのバランスの取り方が非常に上手な薬草系カクテル。薬草系カクテルの入門におすすめ。</h3>
               <img width="50%" src="images/cocktail/campali_orange.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ファジーネーブル（橙色）</h2>
               <h3>ピーチ+オレンジ</h3>
               <h3>ピーチの甘みとオレンジの酸味が調和したカクテル。飲みやすいので初心者におすすめの一杯。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ディタオレンジ（橙色）</h2>
               <h3>ライチ+オレンジ</h3>
               <h3>ファジーネーブルのピーチの部分をライチに変えたカクテル。非常にスルッと飲める。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ぶどうトニック（紫色）</h2>
               <h3>ぶどう+トニック</h3>
               <h3>ぶどうとトニックの甘みを楽しめる女性人気の高いカクテル。飲み過ぎ注意。</h3>
               <img width="50%" src="images/cocktail/grape_tonic.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ピーチソーダ（透明）</h2>
               <h3>ピーチ+ソーダ</h3>
               <h3>ピーチの甘みをソーダでうまく中和したカクテル。脂っこいものを食べた後におすすめしたい一杯。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ぶどう&amp;ピーチトニック（薄紫色）</h2>
               <h3>ぶどう+ピーチ+トニック</h3>
               <h3>青木の天体観測会で爆誕した神カクテル。これはうまい。</h3>
               <img width="50%" src="images/cocktail/grape_peach_tonic.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>カシスオレンジ（紫色/橙色）</h2>
               <h3>カシス+オレンジ</h3>
               <h3>ド定番カクテル。カシスとオレンジのグラデーションを楽しむカクテル。しっかり混ぜて飲もう。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>カシスソーダ（紫色）</h2>
               <h3>カシス+ソーダ</h3>
               <h3>カシスの甘みをソーダでうまく中和したカクテル。定番カクテルなのでいつか必ず飲みましょう。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>マリブパイン（黄色）</h2>
               <h3>ココナッツ+パイン</h3>
@@ -476,92 +475,109 @@
               <img width="50%" src="images/cocktail/malibu_pine.jpg">
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">さっぱり（アルコール弱め）</h1>
+
             <div class="cocktail-item">
               <h2>ハイボール（金色）</h2>
               <h3>ウイスキー+ソーダ</h3>
               <h3>居酒屋の定番カクテル。好きなウイスキーでオーダーするとかっこいい。</h3>
               <img width="50%" src="images/cocktail/Whisky_soda.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ジンジャーハイボール（金色）</h2>
               <h3>ウイスキー+ジンジャーエール</h3>
               <h3>居酒屋の定番カクテル。食前、食間におすすめ。ちょっとだけ通な感じがする。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ジントニック（透明）</h2>
               <h3>ジン+トニック+ライム</h3>
               <h3>バーの顔とも言われるカクテル。好きなジンで注文できるとかっこいい。</h3>
               <img width="50%" src="images/cocktail/gin_tonic.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ジンバック（金色）</h2>
               <h3>ジン+ジンジャーエール+レモン</h3>
               <h3>バーの定番カクテル。ジンジャーエールとレモンの組み合わせは、オスの鹿に蹴り上げられたような衝撃があるということから"Buck Style"と呼ばれる。</h3>
               <img width="50%" src="images/cocktail/gin_buck.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ジンリッキー（透明）</h2>
               <h3>ジン+ライム+ソーダ</h3>
               <h3>バーで通ぶれるカクテル。マドラーでライムを潰しながら飲むさっぱりカクテル。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ジンソーダ（透明）</h2>
               <h3>ジン+ソーダ</h3>
               <h3>ジンの風味を最大限感じることができるカクテル。好きなジンでオーダーできたら完璧。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ジンコーク（黒色）</h2>
               <h3>ジン+ソーダ</h3>
               <h3>ジンのボタニカルとコーラの味が見事に調和したカクテル。バーではあまり注文されないが、居酒屋とかでよく飲まれる。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>カシスバック（紫色）</h2>
               <h3>カシス+ジンジャーエール+レモン</h3>
               <h3>カシスの甘みをレモンで抑えた王道カクテル。食前、食間、食後いつでもいける。</h3>
               <img width="50%" src="images/cocktail/cassis_buck.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>カシスウーロン（茶色）</h2>
               <h3>カシス+烏龍茶</h3>
               <h3>意外と合うのでびっくりする。ウーロン茶で割っているので食間に最適。</h3>
               <img width="50%" src="images/cocktail/cassis_oolong.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>レゲエパンチ（茶色）</h2>
               <h3>ピーチ+烏龍茶</h3>
               <h3>意外と合うのでびっくりする。ウーロン茶で割っているので食間に最適。</h3>
               <img width="50%" src="images/cocktail/peach_woolong.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>スプモーニ（赤色）</h2>
               <h3>薬草系+グレープフルーツ+トニック</h3>
               <h3>薬草系カクテルの代表格といえばこれ。薬草系初心者はまずこれを注文してみるといい。薬草系にハマること間違いなし。</h3>
               <img width="50%" src="images/cocktail/spumoni.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>モスコミュール（金色）</h2>
               <h3>ウォッカ+ジンジャーエール+ライム</h3>
               <h3>ジンジャーエールが好きな人、お酒の匂いが苦手な人におすすめ。暑い日に飲むと最高。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>チャイナブルー（透明/黄色/青色）</h2>
               <h3>ライチ+グレープフルーツ+オレンジ皮+トニック</h3>
               <h3>色のグラデーションが綺麗なカクテル。これを夏のビーチで飲んでる人はおしゃれ。</h3>
               <img width="50%" src="images/cocktail/china_blue.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>桜トニック（桜色）</h2>
               <h3>桜+トニック</h3>
               <h3>日本における春のカクテルといえばこれ。桜餅を食べているような感覚。知名度こそないが、一度飲めば桜リキュールにハマるはず。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>桜スプモーニ（桜色）</h2>
               <h3>桜+グレープフルーツ+トニック</h3>
               <h3>桜リキュールを神レシピ（モーニスタイル）に落とし込んだカクテル。桜と酸味が意外と合う。</h3>
               <img width="50%" src="images/cocktail/sakura_supumoni.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>水星（青色/透明）</h2>
               <h3>日本酒+トニック+オレンジ皮+ベリー</h3>
@@ -569,61 +585,73 @@
               <img width="50%" src="images/cocktail/mercury.jpg">
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">こってり（アルコール弱め）</h1>
+
             <div class="cocktail-item">
               <h2>キューバリブレ（黒色）</h2>
               <h3>ラム+コーラ+ライム</h3>
               <h3>カリブ海に浮かぶ国キューバで爆誕した神カクテル。ラムの甘みとコーラの甘みが調和している。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>マリブコーク（黒色）</h2>
               <h3>ココナッツ+コーラ+レモン</h3>
               <h3>夏のビーチで飲みたいカクテル。ココナッツのこってり感がコーラの香りに包まれている感覚。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>マリブサーフ（青色）</h2>
               <h3>ココナッツ+オレンジ皮+トニック+レモン</h3>
               <h3>夏のビーチで飲みたいカクテル。青色で清涼感があって非常に飲みやすい。</h3>
               <img width="50%" src="images/cocktail/malibu_surf.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>カルアミルク（茶色）</h2>
               <h3>コーヒー+ミルク</h3>
               <h3>ド定番カクテル。女の子が好きなカクテルNo.1。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ジュピター（茶色）</h2>
               <h3>カルア+アマレット+コーヒー+ミルク</h3>
               <h3>大阪のカフェバー「星カフェSpica」のオリジナルカクテル。カルアミルクよりうまい。</h3>
               <img width="50%" src="images/cocktail/jupiter.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>照葉樹林（深緑色）</h2>
               <h3>抹茶+烏龍茶</h3>
               <h3>抹茶とウーロン茶、意外と合う。樹海に迷い込んだような深い緑色をした美しいカクテル。</h3>
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">甘い系（アルコール強め）</h1>
+
             <div class="cocktail-item">
               <h2>キャラメルプラネット（薄茶色）</h2>
               <h3>キャラメル+コーヒー+生クリーム</h3>
               <h3>大阪のカフェバー「星カフェSpica」のオリジナルカクテル。カルアミルクが好きな人は絶対ハマる。非常に完成度が高いカクテル。</h3>
               <img width="50%" src="images/cocktail/caramel_planet.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>グラスホッパー（薄緑色）</h2>
               <h3>ミント+カカオ+生クリーム</h3>
               <h3>清涼感あふれるデザート系カクテル。バーで女の子がよく注文するショートカクテルといえばこれ。</h3>
               <img width="50%" src="images/cocktail/grasshopper.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>フランジェリコホワイトルシアン（薄茶色）</h2>
               <h3>ヘーゼルナッツ+コーヒー+生クリーム</h3>
               <h3>青木のオリジナルカクテル。ナッツ好きなら絶対ハマる。</h3>
               <img width="50%" src="images/cocktail/frangelico_white_russian.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ゴールデンキャデラック（薄黄色）</h2>
               <h3>バニラ+カカオ+生クリーム</h3>
@@ -631,61 +659,73 @@
               <img width="50%" src="images/cocktail/golden_cadillac.jpg">
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">フルーティー（アルコール強め）</h1>
+
             <div class="cocktail-item">
               <h2>ぶどうのホワイトレディ（紫色）</h2>
               <h3>ぶどう+オレンジ皮+レモン</h3>
               <h3>ワインを飲みやすくアレンジした感じ。アルコール度数が高いので気をつけること。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ピーチのホワイトレディ（透明）</h2>
               <h3>ピーチ+オレンジ皮+レモン</h3>
               <h3>ピーチにエタノールを大量注入したようにガツンとくるカクテル。甘くてさっぱり、うまい。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>キウイのギムレット（青緑色）</h2>
               <h3>ジン+キウイ</h3>
               <h3>キウイとジンが直接脳に語りかけてくるようなカクテル。キウイが好きでアルコール強い人はチャレンジしてみて。</h3>
               <img width="50%" src="images/cocktail/kiwi_gimlet.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>いちごのギムレット（赤色）</h2>
               <h3>ジン+いちご</h3>
               <h3>いちごとエタノールを脳まで届けます。いちごが好きでアルコール強い人はチャレンジしてみて。</h3>
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">さっぱり（アルコール強め）</h1>
+
             <div class="cocktail-item">
               <h2>ギムレット（透明）</h2>
               <h3>ジン+ライム</h3>
               <h3>ただただ強いカクテル。ジンのクセをライムの爽やかさがカバーしていて、比較的飲みやすい。</h3>
               <img width="50%" src="images/cocktail/gimlet.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ホワイトレディ（透明）</h2>
               <h3>ジン+オレンジ皮+レモン</h3>
               <h3>ジンの香りを柑橘系の香りで包んだカクテル。強いかつキツい。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ブルームーン（紫）</h2>
               <h3>ジン+すみれ+レモン</h3>
               <h3>すみれの香りとジンのボタニカルな香りが心地よい。好き嫌いが分かれる。</h3>
               <img width="50%" src="images/cocktail/blue_moon.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>コスモバルク（桜色）</h2>
               <h3>ウイスキー+桜+レモン</h3>
               <h3>桜の木をイメージしたようなカクテル。ウイスキー由来の木の香りと、桜の花の香りが調和したカクテル。</h3>
               <img width="50%" src="images/cocktail/cosmo_bulk.JPG">
             </div>
+
             <div class="cocktail-item">
               <h2>楊貴妃（青緑色）</h2>
               <h3>金木犀+ライチ+グレープフルーツ+オレンジ皮</h3>
               <h3>楊貴妃が愛したライチを使った一杯。金木犀がほのかに香るおしゃれなカクテル。</h3>
               <img width="50%" src="images/cocktail/yang_guifei.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>パッショネートコスモ（桃色）</h2>
               <h3>ウォッカ+パッションフルーツ+オレンジ皮+ライム</h3>
@@ -693,99 +733,66 @@
               <img width="50%" src="images/cocktail/passionate_cosmo.jpg">
             </div>
           </section>
+
           <section class="menu-section">
             <h1 class="menu-category">こってり強め</h1>
+
             <div class="cocktail-item">
               <h2>ブラックルシアン（黒色）</h2>
               <h3>ウォッカ+コーヒー</h3>
               <h3>コーヒー好きなら飲んでおきたい一杯。夜寝れないかも。</h3>
             </div>
+
             <div class="cocktail-item">
               <h2>ホワイトルシアン（黒色/白色）</h2>
               <h3>ウォッカ+コーヒー+生クリーム</h3>
               <h3>ブラックルシアンをまろやかにしたカクテル。バーで注文するとかっこいい。</h3>
               <img width="50%" src="images/cocktail/white_russian.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>ゴッドファザー（焦茶色）</h2>
               <h3>ウイスキー+杏</h3>
               <h3>木の香りと杏の香りが調和した一杯。かなり通なカクテル。これをバーで注文する男はイケてる。</h3>
               <img width="50%" src="images/cocktail/godfather.jpg">
             </div>
+
             <div class="cocktail-item">
               <h2>オールドファッションド（焦茶色）</h2>
               <h3>ウイスキー+ビターズ</h3>
               <h3>バー好きなら飲んでおきたいカクテル。バーテンダーによってかなり配合が変わる。</h3>
             </div>
           </section>
+
         </div>
       </div>
 
     </div>
 
-  <div id="fh5-profile">
-		<div class="container">
+    <div id="fh5-profile">
+      <div class="container">
 
-			<div class="row animate-box">
-				<div class="background  col-md-6 col-md-offset-3 text-center">
-					<h2>リンク</h2>
-				</div>
-			</div>
+        <div class="row animate-box">
+          <div class="background col-md-6 col-md-offset-3 text-center">
+            <h2>リンク</h2>
+          </div>
+        </div>
 
-      <div class="background row animate-box text-center">
-				
-				<h3><a href="menu_mocktail.html">モクテルメニュー</a></h3>
-					
-			</div>
+        <div class="background row animate-box text-center">
+          <h3><a href="menu_mocktail.html">モクテルメニュー</a></h3>
+        </div>
 
-			<div class="background row animate-box text-center">
-				
-				<h3><a href="cocktail_tier.html">カクテルTier表</a></h3>
-					
-			</div>
+        <div class="background row animate-box text-center">
+          <h3><a href="cocktail_tier.html">カクテルTier表</a></h3>
+        </div>
 
-      <div class="background row animate-box text-center">
-				
-				<h3><a href="https://www.asahibeer.co.jp/cocktailguide/" target="_blank">カクテルガイド</a></h3>
-					
-			</div>
-			
-		</div>
-  </div>
+        <div class="background row animate-box text-center">
+          <h3><a href="https://www.asahibeer.co.jp/cocktailguide/" target="_blank">カクテルガイド</a></h3>
+        </div>
+        
+      </div>
+    </div>
  
-  <!--
-  <div id="fh5-profile">
-    <div class="container">
-
-			<div class="row animate-box">
-				<div class="background  col-md-6 col-md-offset-3 text-center">
-					<h2>Note</h2>
-				</div>
-			</div>
-
-      <div class="background row animate-box text-center">
-				
-				<h3>カクテルの感想や説明はすべて青木の独断と偏見で書いてます。また、レシピはreferenceなしです。青木が聞いたりしたものを書いているので正しいとは限りません。</h3>
-				
-			</div>
-
-      <div class="background row animate-box text-center">
-				
-				<h3>空きっ腹でお酒を飲むと酔いやすい。何か食べた後にお酒を飲むのが一番いい。</h3>
-				
-			</div>
-     
-      <div class="background row animate-box text-center">
-				
-				<h3>カクテルの頼み方にルールはない。一方で、「スピリッツ系 -> リキュール系 -> デザート系」というように順番を組んで注文できる人はスマートでかっこいいと思う。</h3>
-				
-			</div>
-
-		</div>
-    
-	</div>
-  -->
-
     <!-- *** フッター *** -->
     <footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
       <div class="overlay"></div>
