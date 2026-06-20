@@ -191,8 +191,6 @@
       </div>
     </aside>
 
-
-
     <!-- *** 注文フォーム *** -->
     <div class="menu-wrapper animate-box">
       <div class="menu-board">
@@ -202,103 +200,140 @@
 
             <h1>カクテル注文フォーム</h1>
 
-            <form action="https://formspree.io/f/xnjyeqgv" method="POST">
+            <form
+              id="orderForm"
+              action="https://script.google.com/macros/s/AKfycbz7S1noHldKJpuAjxMpEMQIO9yeWpoNWgLbwTSQTHiWGJPMcn97cgkOUt639d52kJA/exec"
+              method="POST"
+              target="hidden_iframe"
+              onsubmit="return handleSubmit();"
+            >
+              <label for="cocktail">カクテル</label>
+              <select id="cocktail" name="cocktail" required>
+                <option value="">選択してください</option>
 
-              <div class="form-group text-left">
-                <label for="cocktail">カクテル</label>
-                <select id="cocktail" name="cocktail" class="form-control" required>
-                  <option value="">選択してください</option>
+                <optgroup label="フルーティー（アルコール弱め）">
+                  <option value="キウイのジントニック">キウイのジントニック</option>
+                  <option value="いちごのジントニック">いちごのジントニック</option>
+                  <option value="オレンジブロッサム">オレンジブロッサム</option>
+                  <option value="ゴールデンスクリュー">ゴールデンスクリュー</option>
+                  <option value="スクリュードライバー">スクリュードライバー</option>
+                  <option value="オーガスタセブン">オーガスタセブン</option>
+                  <option value="パッシモニ">パッシモニ</option>
+                  <option value="ディタモーニ">ディタモーニ</option>
+                  <option value="カンパリオレンジ">カンパリオレンジ</option>
+                  <option value="ファジーネーブル">ファジーネーブル</option>
+                  <option value="ディタオレンジ">ディタオレンジ</option>
+                  <option value="ぶどうトニック">ぶどうトニック</option>
+                  <option value="ピーチソーダ">ピーチソーダ</option>
+                  <option value="ぶどう&amp;ピーチトニック">ぶどう&amp;ピーチトニック</option>
+                  <option value="カシスオレンジ">カシスオレンジ</option>
+                  <option value="カシスソーダ">カシスソーダ</option>
+                  <option value="マリブパイン">マリブパイン</option>
+                </optgroup>
 
-                  <optgroup label="フルーティー（アルコール弱め）">
-                    <option value="キウイのジントニック">キウイのジントニック</option>
-                    <option value="いちごのジントニック">いちごのジントニック</option>
-                    <option value="オレンジブロッサム">オレンジブロッサム</option>
-                    <option value="ゴールデンスクリュー">ゴールデンスクリュー</option>
-                    <option value="スクリュードライバー">スクリュードライバー</option>
-                    <option value="オーガスタセブン">オーガスタセブン</option>
-                    <option value="パッシモニ">パッシモニ</option>
-                    <option value="ディタモーニ">ディタモーニ</option>
-                    <option value="カンパリオレンジ">カンパリオレンジ</option>
-                    <option value="ファジーネーブル">ファジーネーブル</option>
-                    <option value="ディタオレンジ">ディタオレンジ</option>
-                    <option value="ぶどうトニック">ぶどうトニック</option>
-                    <option value="ピーチソーダ">ピーチソーダ</option>
-                    <option value="ぶどう&amp;ピーチトニック">ぶどう&amp;ピーチトニック</option>
-                    <option value="カシスオレンジ">カシスオレンジ</option>
-                    <option value="カシスソーダ">カシスソーダ</option>
-                    <option value="マリブパイン">マリブパイン</option>
-                  </optgroup>
+                <optgroup label="さっぱり（アルコール弱め）">
+                  <option value="ハイボール">ハイボール</option>
+                  <option value="ジンジャーハイボール">ジンジャーハイボール</option>
+                  <option value="ジントニック">ジントニック</option>
+                  <option value="ジンバック">ジンバック</option>
+                  <option value="ジンリッキー">ジンリッキー</option>
+                  <option value="ジンソーダ">ジンソーダ</option>
+                  <option value="ジンコーク">ジンコーク</option>
+                  <option value="カシスバック">カシスバック</option>
+                  <option value="カシスウーロン">カシスウーロン</option>
+                  <option value="レゲエパンチ">レゲエパンチ</option>
+                  <option value="スプモーニ">スプモーニ</option>
+                  <option value="モスコミュール">モスコミュール</option>
+                  <option value="チャイナブルー">チャイナブルー</option>
+                  <option value="桜トニック">桜トニック</option>
+                  <option value="桜スプモーニ">桜スプモーニ</option>
+                  <option value="水星">水星</option>
+                </optgroup>
 
-                  <optgroup label="さっぱり（アルコール弱め）">
-                    <option value="ハイボール">ハイボール</option>
-                    <option value="ジンジャーハイボール">ジンジャーハイボール</option>
-                    <option value="ジントニック">ジントニック</option>
-                    <option value="ジンバック">ジンバック</option>
-                    <option value="ジンリッキー">ジンリッキー</option>
-                    <option value="ジンソーダ">ジンソーダ</option>
-                    <option value="ジンコーク">ジンコーク</option>
-                    <option value="カシスバック">カシスバック</option>
-                    <option value="カシスウーロン">カシスウーロン</option>
-                    <option value="レゲエパンチ">レゲエパンチ</option>
-                    <option value="スプモーニ">スプモーニ</option>
-                    <option value="モスコミュール">モスコミュール</option>
-                    <option value="チャイナブルー">チャイナブルー</option>
-                    <option value="桜トニック">桜トニック</option>
-                    <option value="桜スプモーニ">桜スプモーニ</option>
-                    <option value="水星">水星</option>
-                  </optgroup>
+                <optgroup label="こってり（アルコール弱め）">
+                  <option value="キューバリブレ">キューバリブレ</option>
+                  <option value="マリブコーク">マリブコーク</option>
+                  <option value="マリブサーフ">マリブサーフ</option>
+                  <option value="カルアミルク">カルアミルク</option>
+                  <option value="ジュピター">ジュピター</option>
+                  <option value="照葉樹林">照葉樹林</option>
+                </optgroup>
 
-                  <optgroup label="こってり（アルコール弱め）">
-                    <option value="キューバリブレ">キューバリブレ</option>
-                    <option value="マリブコーク">マリブコーク</option>
-                    <option value="マリブサーフ">マリブサーフ</option>
-                    <option value="カルアミルク">カルアミルク</option>
-                    <option value="ジュピター">ジュピター</option>
-                    <option value="照葉樹林">照葉樹林</option>
-                  </optgroup>
+                <optgroup label="甘い系（アルコール強め）">
+                  <option value="キャラメルプラネット">キャラメルプラネット</option>
+                  <option value="グラスホッパー">グラスホッパー</option>
+                  <option value="フランジェリコホワイトルシアン">フランジェリコホワイトルシアン</option>
+                  <option value="ゴールデンキャデラック">ゴールデンキャデラック</option>
+                </optgroup>
 
-                  <optgroup label="甘い系（アルコール強め）">
-                    <option value="キャラメルプラネット">キャラメルプラネット</option>
-                    <option value="グラスホッパー">グラスホッパー</option>
-                    <option value="フランジェリコホワイトルシアン">フランジェリコホワイトルシアン</option>
-                    <option value="ゴールデンキャデラック">ゴールデンキャデラック</option>
-                  </optgroup>
+                <optgroup label="フルーティー（アルコール強め）">
+                  <option value="ぶどうのホワイトレディ">ぶどうのホワイトレディ</option>
+                  <option value="ピーチのホワイトレディ">ピーチのホワイトレディ</option>
+                  <option value="キウイのギムレット">キウイのギムレット</option>
+                  <option value="いちごのギムレット">いちごのギムレット</option>
+                </optgroup>
 
-                  <optgroup label="フルーティー（アルコール強め）">
-                    <option value="ぶどうのホワイトレディ">ぶどうのホワイトレディ</option>
-                    <option value="ピーチのホワイトレディ">ピーチのホワイトレディ</option>
-                    <option value="キウイのギムレット">キウイのギムレット</option>
-                    <option value="いちごのギムレット">いちごのギムレット</option>
-                  </optgroup>
+                <optgroup label="さっぱり（アルコール強め）">
+                  <option value="ギムレット">ギムレット</option>
+                  <option value="ホワイトレディ">ホワイトレディ</option>
+                  <option value="ブルームーン">ブルームーン</option>
+                  <option value="コスモバルク">コスモバルク</option>
+                  <option value="楊貴妃">楊貴妃</option>
+                  <option value="パッショネートコスモ">パッショネートコスモ</option>
+                </optgroup>
 
-                  <optgroup label="さっぱり（アルコール強め）">
-                    <option value="ギムレット">ギムレット</option>
-                    <option value="ホワイトレディ">ホワイトレディ</option>
-                    <option value="ブルームーン">ブルームーン</option>
-                    <option value="コスモバルク">コスモバルク</option>
-                    <option value="楊貴妃">楊貴妃</option>
-                    <option value="パッショネートコスモ">パッショネートコスモ</option>
-                  </optgroup>
+                <optgroup label="こってり強め">
+                  <option value="ブラックルシアン">ブラックルシアン</option>
+                  <option value="ホワイトルシアン">ホワイトルシアン</option>
+                  <option value="ゴッドファザー">ゴッドファザー</option>
+                  <option value="オールドファッションド">オールドファッションド</option>
+                </optgroup>
 
-                  <optgroup label="こってり強め">
-                    <option value="ブラックルシアン">ブラックルシアン</option>
-                    <option value="ホワイトルシアン">ホワイトルシアン</option>
-                    <option value="ゴッドファザー">ゴッドファザー</option>
-                    <option value="オールドファッションド">オールドファッションド</option>
-                  </optgroup>
-
+                <optgroup label="その他">
                   <option value="その他">その他</option>
-                </select>
-              </div>
+                </optgroup>
 
-              <div class="form-group text-left">
-                <label for="name">名前</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-              </div>
+              </select>
 
-              <button type="submit" class="btn btn-primary">送信</button>
+              <br><br>
 
+              <label for="name">名前</label>
+              <input type="text" id="name" name="name" required>
+
+              <br><br>
+
+              <button type="submit" id="submitButton">送信</button>
             </form>
+
+            <iframe
+              name="hidden_iframe"
+              style="display:none;"
+              onload="handleIframeLoad();"
+            ></iframe>
+
+            <script>
+              let submitted = false;
+
+              function handleSubmit() {
+                submitted = true;
+
+                const button = document.getElementById('submitButton');
+                button.disabled = true;
+                button.textContent = '送信中...';
+
+                return true;
+              }
+
+              function handleIframeLoad() {
+                if (!submitted) {
+                  return;
+                }
+
+                alert('注文OK');
+
+                location.reload();
+              }
+            </script>
 
           </div>
         </div>
